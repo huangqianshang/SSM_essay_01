@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans              http://www.springframework.org/schema/beans/spring-beans.xsd              http://www.springframework.org/schema/security              http://www.springframework.org/schema/security/spring-security.xsd">
+<!--    配置不过滤资源（静态资源及登录相关）-->
+    <security:http security="none" pattern="/login.jsp"/>
+    <security:http security="none" pattern="/plugins/**"/>
+	<security:http security="none" pattern="/css/**"/>
+	<security:http security="none" pattern="/img/**"/>
+
+    <security:http auto-config="true" use-expressions="true">
+        <!-- intercept-url定义一个过滤规则 pattern表示对哪些url进行权限控制，access属性表示在请求对应 的URL时需要什么权限，             默认配置时它应该是一个以逗号分隔的角色列表，请求的用户只需拥有其中的一个角色就能成功访问对应 的URL -->
+        <security:intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
+
+<!-- 登录界面路径，登录请求的路径，authentication-failure-url 用户权限校验失败之 后才会跳转到这个页面，如果数据库中没有这个用户则不会跳转到这个页面，登录成功页面     -->
+        <security:form-login 
+		login-page="/login.jsp"
+        login-processing-url="/login" 
+		username-parameter="username"
+        password-parameter="password" 
+		default-target-url="/index.jsp" />
+
+<!--    登出路径           是否清除session             登出请求路径            登出成功后跳转界面-->
+        <security:logout invalidate-session="true" logout-url="/logout" logout-success-url="/login.jsp"/>
+
+<!--     关闭外网   -->
+        <security:csrf disabled="true"/>
+    <!--        解决http://localhost:8080/favicon.ico   404                   -->
+<!--         在页面加入<link rel="shortcut icon" href="#" />          <security:intercept-url pattern="/favicon.ico" filters="none"/>-->
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider user-service-ref="userService">
+            <security:password-encoder ref="bCryptPasswordEncoder"/>
+<!--            <security:user-service>-->
+<!--                <security:user name="user" password="{noop}user" authorities="ROLE_USER"/>-->
+<!--                <security:user name="admin" password="{noop}admin" authorities="ROLE_ADMIN"/>-->
+<!--            </security:user-service>-->
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+<!--    开启权限注解-->
+<!--    <security:global-method-security secured-annotations="enabled"/>-->
+
+    <!--    加密类-->
+    <bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+</beans>

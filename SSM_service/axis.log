@@ -1,0 +1,224 @@
+2020-09-20 16:31:09,104 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6bdf28bb
+2020-09-20 16:31:09,617 513    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-20 16:31:09,645 541    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\OrderServiceImp.class]
+2020-09-20 16:31:09,647 543    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\ProductServiceImp.class]
+2020-09-20 16:31:09,648 544    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\UserServiceImp.class]
+2020-09-20 16:31:09,724 620    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 17 bean definitions from class path resource [spring/applicationContext.xml]
+2020-09-20 16:31:09,799 695    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-20 16:31:09,908 804    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-20 16:31:09,959 855    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\MemberDao.class]
+2020-09-20 16:31:09,959 855    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\OrderDao.class]
+2020-09-20 16:31:09,959 855    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\PermissionDao.class]
+2020-09-20 16:31:09,959 855    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-20 16:31:09,959 855    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\RoleDao.class]
+2020-09-20 16:31:09,960 856    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\TravellerDao.class]
+2020-09-20 16:31:09,960 856    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\UserDao.class]
+2020-09-20 16:31:09,961 857    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'memberDao' and 'com.hqs.dao.MemberDao' mapperInterface
+2020-09-20 16:31:09,964 860    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'memberDao'.
+2020-09-20 16:31:09,964 860    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'orderDao' and 'com.hqs.dao.OrderDao' mapperInterface
+2020-09-20 16:31:09,964 860    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'orderDao'.
+2020-09-20 16:31:09,964 860    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'permissionDao' and 'com.hqs.dao.PermissionDao' mapperInterface
+2020-09-20 16:31:09,965 861    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'permissionDao'.
+2020-09-20 16:31:09,965 861    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-20 16:31:09,965 861    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-20 16:31:09,965 861    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'roleDao' and 'com.hqs.dao.RoleDao' mapperInterface
+2020-09-20 16:31:09,965 861    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'roleDao'.
+2020-09-20 16:31:09,966 862    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'travellerDao' and 'com.hqs.dao.TravellerDao' mapperInterface
+2020-09-20 16:31:09,966 862    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'travellerDao'.
+2020-09-20 16:31:09,966 862    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'userDao' and 'com.hqs.dao.UserDao' mapperInterface
+2020-09-20 16:31:09,966 862    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'userDao'.
+2020-09-20 16:31:09,973 869    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-20 16:31:09,977 873    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-20 16:31:09,981 877    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-20 16:31:09,984 880    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-20 16:31:09,996 892    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2020-09-20 16:31:10,061 957    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
+2020-09-20 16:31:10,062 958    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2020-09-20 16:31:10,516 1412   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'factory'
+2020-09-20 16:31:10,543 1439   [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-09-20 16:31:10,684 1580   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or 'configLocation' not specified, using default MyBatis Configuration
+2020-09-20 16:31:10,771 1667   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Registered plugin: 'com.github.pagehelper.PageInterceptor@5167f57d'
+2020-09-20 16:31:10,773 1669   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property 'mapperLocations' was not specified or no matching resources found
+2020-09-20 16:31:10,782 1678   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'orderService'
+2020-09-20 16:31:10,822 1718   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'orderDao'
+2020-09-20 16:31:10,913 1809   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'tx-advice'
+2020-09-20 16:31:10,922 1818   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'transactionManager'
+2020-09-20 16:31:10,959 1855   [           main] DEBUG atchTransactionAttributeSource  - Adding transactional method [find*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly]
+2020-09-20 16:31:10,988 1884   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productService'
+2020-09-20 16:31:10,990 1886   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productDao'
+2020-09-20 16:31:11,003 1899   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'userService'
+2020-09-20 16:31:11,007 1903   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'userDao'
+2020-09-20 16:31:11,017 1913   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'passwordEncoder'
+2020-09-20 16:31:11,025 1921   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'memberDao'
+2020-09-20 16:31:11,029 1925   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'permissionDao'
+2020-09-20 16:31:11,034 1930   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'roleDao'
+2020-09-20 16:31:11,039 1935   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'travellerDao'
+2020-09-20 16:33:15,704 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6bdf28bb
+2020-09-20 16:33:16,205 501    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-20 16:33:16,231 527    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\OrderServiceImp.class]
+2020-09-20 16:33:16,232 528    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\ProductServiceImp.class]
+2020-09-20 16:33:16,232 528    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\UserServiceImp.class]
+2020-09-20 16:33:16,286 582    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 17 bean definitions from class path resource [spring/applicationContext.xml]
+2020-09-20 16:33:16,333 629    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-20 16:33:16,417 713    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-20 16:33:16,458 754    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\MemberDao.class]
+2020-09-20 16:33:16,459 755    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\OrderDao.class]
+2020-09-20 16:33:16,459 755    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\PermissionDao.class]
+2020-09-20 16:33:16,459 755    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-20 16:33:16,460 756    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\RoleDao.class]
+2020-09-20 16:33:16,460 756    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\TravellerDao.class]
+2020-09-20 16:33:16,460 756    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\UserDao.class]
+2020-09-20 16:33:16,462 758    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'memberDao' and 'com.hqs.dao.MemberDao' mapperInterface
+2020-09-20 16:33:16,464 760    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'memberDao'.
+2020-09-20 16:33:16,464 760    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'orderDao' and 'com.hqs.dao.OrderDao' mapperInterface
+2020-09-20 16:33:16,464 760    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'orderDao'.
+2020-09-20 16:33:16,464 760    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'permissionDao' and 'com.hqs.dao.PermissionDao' mapperInterface
+2020-09-20 16:33:16,464 760    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'permissionDao'.
+2020-09-20 16:33:16,464 760    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-20 16:33:16,464 760    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-20 16:33:16,464 760    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'roleDao' and 'com.hqs.dao.RoleDao' mapperInterface
+2020-09-20 16:33:16,464 760    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'roleDao'.
+2020-09-20 16:33:16,465 761    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'travellerDao' and 'com.hqs.dao.TravellerDao' mapperInterface
+2020-09-20 16:33:16,465 761    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'travellerDao'.
+2020-09-20 16:33:16,465 761    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'userDao' and 'com.hqs.dao.UserDao' mapperInterface
+2020-09-20 16:33:16,465 761    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'userDao'.
+2020-09-20 16:33:16,470 766    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-20 16:33:16,473 769    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-20 16:33:16,476 772    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-20 16:33:16,478 774    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-20 16:33:16,484 780    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2020-09-20 16:33:16,528 824    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
+2020-09-20 16:33:16,529 825    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2020-09-20 16:33:16,948 1244   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'factory'
+2020-09-20 16:33:16,960 1256   [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-09-20 16:33:17,069 1365   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or 'configLocation' not specified, using default MyBatis Configuration
+2020-09-20 16:33:17,150 1446   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Registered plugin: 'com.github.pagehelper.PageInterceptor@5167f57d'
+2020-09-20 16:33:17,152 1448   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property 'mapperLocations' was not specified or no matching resources found
+2020-09-20 16:33:17,159 1455   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'orderService'
+2020-09-20 16:33:17,190 1486   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'orderDao'
+2020-09-20 16:33:17,289 1585   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'tx-advice'
+2020-09-20 16:33:17,297 1593   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'transactionManager'
+2020-09-20 16:33:17,339 1635   [           main] DEBUG atchTransactionAttributeSource  - Adding transactional method [find*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly]
+2020-09-20 16:33:17,367 1663   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productService'
+2020-09-20 16:33:17,369 1665   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productDao'
+2020-09-20 16:33:17,385 1681   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'userService'
+2020-09-20 16:33:17,390 1686   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'userDao'
+2020-09-20 16:33:17,400 1696   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'passwordEncoder'
+2020-09-20 16:33:17,407 1703   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'memberDao'
+2020-09-20 16:33:17,412 1708   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'permissionDao'
+2020-09-20 16:33:17,417 1713   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'roleDao'
+2020-09-20 16:33:17,422 1718   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'travellerDao'
+2020-09-22 17:31:21,585 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6bdf28bb
+2020-09-22 17:31:22,172 587    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-22 17:31:22,202 617    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\OrderServiceImp.class]
+2020-09-22 17:31:22,203 618    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\PermissionServiceImp.class]
+2020-09-22 17:31:22,204 619    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\ProductServiceImp.class]
+2020-09-22 17:31:22,205 620    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\RoleServiceImp.class]
+2020-09-22 17:31:22,206 621    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\UserServiceImp.class]
+2020-09-22 17:31:22,283 698    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 18 bean definitions from class path resource [spring/applicationContext.xml]
+2020-09-22 17:31:22,345 760    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-22 17:31:22,446 861    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-22 17:31:22,501 916    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\MemberDao.class]
+2020-09-22 17:31:22,501 916    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\OrderDao.class]
+2020-09-22 17:31:22,501 916    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\PermissionDao.class]
+2020-09-22 17:31:22,501 916    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-22 17:31:22,501 916    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\RoleDao.class]
+2020-09-22 17:31:22,502 917    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\TravellerDao.class]
+2020-09-22 17:31:22,502 917    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\UserDao.class]
+2020-09-22 17:31:22,503 918    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'memberDao' and 'com.hqs.dao.MemberDao' mapperInterface
+2020-09-22 17:31:22,506 921    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'memberDao'.
+2020-09-22 17:31:22,507 922    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'orderDao' and 'com.hqs.dao.OrderDao' mapperInterface
+2020-09-22 17:31:22,507 922    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'orderDao'.
+2020-09-22 17:31:22,507 922    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'permissionDao' and 'com.hqs.dao.PermissionDao' mapperInterface
+2020-09-22 17:31:22,507 922    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'permissionDao'.
+2020-09-22 17:31:22,507 922    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-22 17:31:22,507 922    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-22 17:31:22,508 923    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'roleDao' and 'com.hqs.dao.RoleDao' mapperInterface
+2020-09-22 17:31:22,508 923    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'roleDao'.
+2020-09-22 17:31:22,508 923    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'travellerDao' and 'com.hqs.dao.TravellerDao' mapperInterface
+2020-09-22 17:31:22,508 923    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'travellerDao'.
+2020-09-22 17:31:22,508 923    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'userDao' and 'com.hqs.dao.UserDao' mapperInterface
+2020-09-22 17:31:22,508 923    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'userDao'.
+2020-09-22 17:31:22,515 930    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-22 17:31:22,519 934    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-22 17:31:22,524 939    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-22 17:31:22,526 941    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-22 17:31:22,535 950    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2020-09-22 17:31:22,619 1034   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
+2020-09-22 17:31:22,621 1036   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2020-09-22 17:31:23,154 1569   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'factory'
+2020-09-22 17:31:23,193 1608   [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-09-22 17:31:23,381 1796   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or 'configLocation' not specified, using default MyBatis Configuration
+2020-09-22 17:31:23,482 1897   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Registered plugin: 'com.github.pagehelper.PageInterceptor@24105dc5'
+2020-09-22 17:31:23,484 1899   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property 'mapperLocations' was not specified or no matching resources found
+2020-09-22 17:31:23,492 1907   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'orderService'
+2020-09-22 17:31:23,532 1947   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'orderDao'
+2020-09-22 17:31:23,638 2053   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'tx-advice'
+2020-09-22 17:31:23,651 2066   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'transactionManager'
+2020-09-22 17:31:23,708 2123   [           main] DEBUG atchTransactionAttributeSource  - Adding transactional method [find*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly]
+2020-09-22 17:31:23,746 2161   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'permissionService'
+2020-09-22 17:31:23,749 2164   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'permissionDao'
+2020-09-22 17:31:23,767 2182   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productService'
+2020-09-22 17:31:23,770 2185   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productDao'
+2020-09-22 17:31:23,781 2196   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'roleService'
+2020-09-22 17:31:23,782 2197   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'roleDao'
+2020-09-22 17:31:23,801 2216   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'userService'
+2020-09-22 17:31:23,806 2221   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'userDao'
+2020-09-22 17:31:23,819 2234   [           main] WARN  ClassPathXmlApplicationContext  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'passwordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.password.PasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-09-22 17:32:55,074 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6bdf28bb
+2020-09-22 17:32:55,526 452    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-22 17:32:55,550 476    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\OrderServiceImp.class]
+2020-09-22 17:32:55,551 477    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\PermissionServiceImp.class]
+2020-09-22 17:32:55,551 477    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\ProductServiceImp.class]
+2020-09-22 17:32:55,552 478    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\RoleServiceImp.class]
+2020-09-22 17:32:55,553 479    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_service\target\classes\com\hqs\service\imp\UserServiceImp.class]
+2020-09-22 17:32:55,601 527    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 18 bean definitions from class path resource [spring/applicationContext.xml]
+2020-09-22 17:32:55,644 570    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-22 17:32:55,725 651    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-22 17:32:55,767 693    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\MemberDao.class]
+2020-09-22 17:32:55,768 694    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\OrderDao.class]
+2020-09-22 17:32:55,768 694    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\PermissionDao.class]
+2020-09-22 17:32:55,768 694    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-22 17:32:55,768 694    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\RoleDao.class]
+2020-09-22 17:32:55,768 694    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\TravellerDao.class]
+2020-09-22 17:32:55,768 694    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\UserDao.class]
+2020-09-22 17:32:55,770 696    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'memberDao' and 'com.hqs.dao.MemberDao' mapperInterface
+2020-09-22 17:32:55,772 698    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'memberDao'.
+2020-09-22 17:32:55,772 698    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'orderDao' and 'com.hqs.dao.OrderDao' mapperInterface
+2020-09-22 17:32:55,772 698    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'orderDao'.
+2020-09-22 17:32:55,772 698    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'permissionDao' and 'com.hqs.dao.PermissionDao' mapperInterface
+2020-09-22 17:32:55,772 698    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'permissionDao'.
+2020-09-22 17:32:55,773 699    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-22 17:32:55,773 699    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-22 17:32:55,773 699    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'roleDao' and 'com.hqs.dao.RoleDao' mapperInterface
+2020-09-22 17:32:55,773 699    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'roleDao'.
+2020-09-22 17:32:55,773 699    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'travellerDao' and 'com.hqs.dao.TravellerDao' mapperInterface
+2020-09-22 17:32:55,773 699    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'travellerDao'.
+2020-09-22 17:32:55,773 699    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'userDao' and 'com.hqs.dao.UserDao' mapperInterface
+2020-09-22 17:32:55,773 699    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'userDao'.
+2020-09-22 17:32:55,778 704    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-22 17:32:55,780 706    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-22 17:32:55,783 709    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-22 17:32:55,785 711    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-22 17:32:55,792 718    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2020-09-22 17:32:55,837 763    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
+2020-09-22 17:32:55,838 764    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2020-09-22 17:32:56,315 1241   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'factory'
+2020-09-22 17:32:56,332 1258   [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-09-22 17:32:56,434 1360   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or 'configLocation' not specified, using default MyBatis Configuration
+2020-09-22 17:32:56,517 1443   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Registered plugin: 'com.github.pagehelper.PageInterceptor@24105dc5'
+2020-09-22 17:32:56,520 1446   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property 'mapperLocations' was not specified or no matching resources found
+2020-09-22 17:32:56,528 1454   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'orderService'
+2020-09-22 17:32:56,571 1497   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'orderDao'
+2020-09-22 17:32:56,675 1601   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'tx-advice'
+2020-09-22 17:32:56,685 1611   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'transactionManager'
+2020-09-22 17:32:56,736 1662   [           main] DEBUG atchTransactionAttributeSource  - Adding transactional method [find*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly]
+2020-09-22 17:32:56,771 1697   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'permissionService'
+2020-09-22 17:32:56,775 1701   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'permissionDao'
+2020-09-22 17:32:56,795 1721   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productService'
+2020-09-22 17:32:56,798 1724   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productDao'
+2020-09-22 17:32:56,811 1737   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'roleService'
+2020-09-22 17:32:56,813 1739   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'roleDao'
+2020-09-22 17:32:56,832 1758   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'userService'
+2020-09-22 17:32:56,843 1769   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'userDao'
+2020-09-22 17:32:56,862 1788   [           main] WARN  ClassPathXmlApplicationContext  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'passwordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.password.PasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}

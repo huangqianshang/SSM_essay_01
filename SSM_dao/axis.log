@@ -1,0 +1,213 @@
+2020-09-10 09:56:23,828 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@35bbe5e8
+2020-09-10 09:56:24,352 524    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-10 09:56:24,422 594    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-10 09:56:24,460 632    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-10 09:56:24,512 684    [           main] DEBUG .mapper.ClassPathMapperScanner  - Ignored because not a concrete top-level class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\test-classes\com\hqs\dao\TestMybatis.class]
+2020-09-10 09:56:24,512 684    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-10 09:56:24,527 699    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-10 09:56:24,530 702    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-10 09:56:24,535 707    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-10 09:56:24,539 711    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-10 09:56:24,543 715    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-10 09:56:24,545 717    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-10 09:56:24,568 740    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
+2020-09-10 09:56:24,697 869    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'factory'
+2020-09-10 09:56:24,715 887    [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-09-10 09:56:24,740 912    [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or 'configLocation' not specified, using default MyBatis Configuration
+2020-09-10 09:56:24,871 1043   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property 'mapperLocations' was not specified or no matching resources found
+2020-09-10 09:56:24,875 1047   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productDao'
+2020-09-10 09:56:25,046 1218   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Creating a new SqlSession
+2020-09-10 09:56:25,056 1228   [           main] DEBUG mybatis.spring.SqlSessionUtils  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2177849e] was not registered for synchronization because synchronization is not active
+2020-09-10 09:56:25,078 1250   [           main] DEBUG dbc.datasource.DataSourceUtils  - Fetching JDBC Connection from DataSource
+2020-09-10 09:56:25,278 1450   [           main] ERROR aba.druid.pool.DruidDataSource  - testWhileIdle is true, validationQuery not set
+2020-09-10 09:56:25,310 1482   [           main] INFO  aba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-09-10 09:56:25,650 1822   [           main] DEBUG ction.SpringManagedTransaction  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1a18644] will not be managed by Spring
+2020-09-10 09:56:25,656 1828   [           main] DEBUG com.hqs.dao.ProductDao.findAll  - ==>  Preparing: select * from product 
+2020-09-10 09:56:25,704 1876   [           main] DEBUG com.hqs.dao.ProductDao.findAll  - ==> Parameters: 
+2020-09-10 09:56:25,800 1972   [           main] DEBUG com.hqs.dao.ProductDao.findAll  - <==      Total: 3
+2020-09-10 09:56:25,804 1976   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2177849e]
+2020-09-12 16:13:00,807 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5a39699c
+2020-09-12 16:13:01,386 579    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-12 16:13:01,453 646    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-12 16:13:01,496 689    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-12 16:13:01,557 750    [           main] DEBUG .mapper.ClassPathMapperScanner  - Ignored because not a concrete top-level class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\test-classes\com\hqs\dao\TestMybatis.class]
+2020-09-12 16:13:01,558 751    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-12 16:13:01,572 765    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-12 16:13:01,575 768    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-12 16:13:01,581 774    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-12 16:13:01,585 778    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-12 16:13:01,588 781    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-12 16:13:01,591 784    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-12 16:13:01,606 799    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
+2020-09-12 16:13:01,723 916    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'factory'
+2020-09-12 16:13:01,747 940    [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-09-12 16:13:01,765 958    [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or 'configLocation' not specified, using default MyBatis Configuration
+2020-09-12 16:13:01,885 1078   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property 'mapperLocations' was not specified or no matching resources found
+2020-09-12 16:13:01,890 1083   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productDao'
+2020-09-12 16:13:02,104 1297   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Creating a new SqlSession
+2020-09-12 16:13:02,116 1309   [           main] DEBUG mybatis.spring.SqlSessionUtils  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73ee04c8] was not registered for synchronization because synchronization is not active
+2020-09-12 16:13:02,133 1326   [           main] DEBUG dbc.datasource.DataSourceUtils  - Fetching JDBC Connection from DataSource
+2020-09-12 16:13:02,304 1497   [           main] ERROR aba.druid.pool.DruidDataSource  - testWhileIdle is true, validationQuery not set
+2020-09-12 16:13:02,334 1527   [           main] INFO  aba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-09-12 16:13:02,659 1852   [           main] DEBUG ction.SpringManagedTransaction  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@2ed2d9cb] will not be managed by Spring
+2020-09-12 16:13:02,665 1858   [           main] DEBUG com.hqs.dao.ProductDao.findAll  - ==>  Preparing: select * from product 
+2020-09-12 16:13:02,742 1935   [           main] DEBUG com.hqs.dao.ProductDao.findAll  - ==> Parameters: 
+2020-09-12 16:13:02,782 1975   [           main] DEBUG com.hqs.dao.ProductDao.findAll  - <==      Total: 3
+2020-09-12 16:13:02,784 1977   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73ee04c8]
+2020-09-12 16:13:29,562 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5a39699c
+2020-09-12 16:13:29,893 331    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-12 16:13:29,950 388    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-12 16:13:29,977 415    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-12 16:13:30,020 458    [           main] DEBUG .mapper.ClassPathMapperScanner  - Ignored because not a concrete top-level class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\test-classes\com\hqs\dao\TestMybatis.class]
+2020-09-12 16:13:30,020 458    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-12 16:13:30,031 469    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-12 16:13:30,033 471    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-12 16:13:30,037 475    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-12 16:13:30,040 478    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-12 16:13:30,042 480    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-12 16:13:30,043 481    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-12 16:13:30,055 493    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
+2020-09-12 16:13:30,147 585    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'factory'
+2020-09-12 16:13:30,159 597    [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-09-12 16:13:30,175 613    [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or 'configLocation' not specified, using default MyBatis Configuration
+2020-09-12 16:13:30,238 676    [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property 'mapperLocations' was not specified or no matching resources found
+2020-09-12 16:13:30,240 678    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productDao'
+2020-09-12 16:13:30,368 806    [           main] DEBUG mybatis.spring.SqlSessionUtils  - Creating a new SqlSession
+2020-09-12 16:13:30,375 813    [           main] DEBUG mybatis.spring.SqlSessionUtils  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49dc7102] was not registered for synchronization because synchronization is not active
+2020-09-12 16:13:30,392 830    [           main] DEBUG dbc.datasource.DataSourceUtils  - Fetching JDBC Connection from DataSource
+2020-09-12 16:13:30,484 922    [           main] ERROR aba.druid.pool.DruidDataSource  - testWhileIdle is true, validationQuery not set
+2020-09-12 16:13:30,500 938    [           main] INFO  aba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-09-12 16:13:30,789 1227   [           main] DEBUG ction.SpringManagedTransaction  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4f2b503c] will not be managed by Spring
+2020-09-12 16:13:30,799 1237   [           main] DEBUG     com.hqs.dao.ProductDao.add  - ==>  Preparing: insert into product values (?,?,?,?,?,?,?,?) 
+2020-09-12 16:13:30,908 1346   [           main] DEBUG     com.hqs.dao.ProductDao.add  - ==> Parameters: 1(String), istes(String), Asdsa(String), cs(String), 2020-09-12 16:13:30.358(Timestamp), 1000(Integer), ASdsa(String), 关闭(String)
+2020-09-12 16:13:30,928 1366   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49dc7102]
+2020-09-12 16:13:30,982 1420   [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2020-09-12 16:13:30,984 1422   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'DB2'
+2020-09-12 16:13:31,004 1442   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'Derby'
+2020-09-12 16:13:31,006 1444   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'H2'
+2020-09-12 16:13:31,007 1445   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'HDB'
+2020-09-12 16:13:31,010 1448   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'HSQL'
+2020-09-12 16:13:31,011 1449   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'Informix'
+2020-09-12 16:13:31,012 1450   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'MS-SQL'
+2020-09-12 16:13:31,013 1451   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'MySQL'
+2020-09-12 16:13:31,014 1452   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'Oracle'
+2020-09-12 16:13:31,015 1453   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'PostgreSQL'
+2020-09-12 16:13:31,017 1455   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'Sybase'
+2020-09-12 16:13:31,018 1456   [           main] DEBUG c.support.SQLErrorCodesFactory  - Looking up default SQLErrorCodes for DataSource [com.alibaba.druid.pool.DruidDataSource@6cd28fa7]
+2020-09-12 16:13:31,022 1460   [           main] DEBUG dbc.datasource.DataSourceUtils  - Fetching JDBC Connection from DataSource
+2020-09-12 16:13:31,026 1464   [           main] DEBUG c.support.SQLErrorCodesFactory  - SQL error codes for 'MySQL' found
+2020-09-12 16:13:31,026 1464   [           main] DEBUG c.support.SQLErrorCodesFactory  - Caching SQL error codes for DataSource [com.alibaba.druid.pool.DruidDataSource@6cd28fa7]: database product name is 'MySQL'
+2020-09-12 16:13:31,027 1465   [           main] DEBUG rrorCodeSQLExceptionTranslator  - Unable to translate SQLException with Error code '1366', will now try the fallback translator
+2020-09-12 16:13:31,027 1465   [           main] DEBUG SQLStateSQLExceptionTranslator  - Extracted SQL state class 'HY' from value 'HY000'
+2020-09-12 16:19:44,809 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5a39699c
+2020-09-12 16:19:45,147 338    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-12 16:19:45,206 397    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-12 16:19:45,250 441    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-12 16:19:45,310 501    [           main] DEBUG .mapper.ClassPathMapperScanner  - Ignored because not a concrete top-level class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\test-classes\com\hqs\dao\TestMybatis.class]
+2020-09-12 16:19:45,310 501    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-12 16:19:45,326 517    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-12 16:19:45,328 519    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-12 16:19:45,332 523    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-12 16:19:45,335 526    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-12 16:19:45,337 528    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-12 16:19:45,339 530    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-12 16:19:45,355 546    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
+2020-09-12 16:19:45,457 648    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'factory'
+2020-09-12 16:19:45,467 658    [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-09-12 16:19:45,482 673    [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or 'configLocation' not specified, using default MyBatis Configuration
+2020-09-12 16:19:45,545 736    [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property 'mapperLocations' was not specified or no matching resources found
+2020-09-12 16:19:45,548 739    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productDao'
+2020-09-12 16:19:45,685 876    [           main] DEBUG mybatis.spring.SqlSessionUtils  - Creating a new SqlSession
+2020-09-12 16:19:45,694 885    [           main] DEBUG mybatis.spring.SqlSessionUtils  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49dc7102] was not registered for synchronization because synchronization is not active
+2020-09-12 16:19:45,709 900    [           main] DEBUG dbc.datasource.DataSourceUtils  - Fetching JDBC Connection from DataSource
+2020-09-12 16:19:45,798 989    [           main] ERROR aba.druid.pool.DruidDataSource  - testWhileIdle is true, validationQuery not set
+2020-09-12 16:19:45,814 1005   [           main] INFO  aba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-09-12 16:19:46,152 1343   [           main] DEBUG ction.SpringManagedTransaction  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4f2b503c] will not be managed by Spring
+2020-09-12 16:19:46,161 1352   [           main] DEBUG     com.hqs.dao.ProductDao.add  - ==>  Preparing: insert into product values (?,?,?,?,?,?,?,?) 
+2020-09-12 16:19:46,284 1475   [           main] DEBUG     com.hqs.dao.ProductDao.add  - ==> Parameters: 1(String), istes(String), Asdsa(String), cs(String), 2020-09-12 16:19:45.675(Timestamp), 1000(Integer), ASdsa(String), 0(Integer)
+2020-09-12 16:19:46,294 1485   [           main] DEBUG     com.hqs.dao.ProductDao.add  - <==    Updates: 1
+2020-09-12 16:19:46,295 1486   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49dc7102]
+2020-09-18 11:39:05,437 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b71769e
+2020-09-18 11:39:06,092 655    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-18 11:39:06,176 739    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-18 11:39:06,236 799    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-18 11:39:06,318 881    [           main] DEBUG .mapper.ClassPathMapperScanner  - Ignored because not a concrete top-level class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\test-classes\com\hqs\dao\TestMybatis.class]
+2020-09-18 11:39:06,318 881    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\MemberDao.class]
+2020-09-18 11:39:06,319 882    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\OrderDao.class]
+2020-09-18 11:39:06,319 882    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\PermissionDao.class]
+2020-09-18 11:39:06,319 882    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-18 11:39:06,319 882    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\RoleDao.class]
+2020-09-18 11:39:06,319 882    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\TravellerDao.class]
+2020-09-18 11:39:06,319 882    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\UserDao.class]
+2020-09-18 11:39:06,337 900    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'memberDao' and 'com.hqs.dao.MemberDao' mapperInterface
+2020-09-18 11:39:06,340 903    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'memberDao'.
+2020-09-18 11:39:06,341 904    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'orderDao' and 'com.hqs.dao.OrderDao' mapperInterface
+2020-09-18 11:39:06,341 904    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'orderDao'.
+2020-09-18 11:39:06,341 904    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'permissionDao' and 'com.hqs.dao.PermissionDao' mapperInterface
+2020-09-18 11:39:06,341 904    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'permissionDao'.
+2020-09-18 11:39:06,341 904    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-18 11:39:06,341 904    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-18 11:39:06,341 904    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'roleDao' and 'com.hqs.dao.RoleDao' mapperInterface
+2020-09-18 11:39:06,341 904    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'roleDao'.
+2020-09-18 11:39:06,342 905    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'travellerDao' and 'com.hqs.dao.TravellerDao' mapperInterface
+2020-09-18 11:39:06,342 905    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'travellerDao'.
+2020-09-18 11:39:06,342 905    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'userDao' and 'com.hqs.dao.UserDao' mapperInterface
+2020-09-18 11:39:06,342 905    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'userDao'.
+2020-09-18 11:39:06,350 913    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-18 11:39:06,355 918    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-18 11:39:06,360 923    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-18 11:39:06,364 927    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-18 11:39:06,386 949    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
+2020-09-18 11:39:06,543 1106   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'factory'
+2020-09-18 11:39:06,581 1144   [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-09-18 11:39:06,745 1308   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or 'configLocation' not specified, using default MyBatis Configuration
+2020-09-18 11:39:06,891 1454   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Registered plugin: 'com.github.pagehelper.PageInterceptor@3e96bacf'
+2020-09-18 11:39:06,895 1458   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property 'mapperLocations' was not specified or no matching resources found
+2020-09-18 11:39:06,902 1465   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'memberDao'
+2020-09-18 11:39:07,057 1620   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'orderDao'
+2020-09-18 11:39:07,076 1639   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'permissionDao'
+2020-09-18 11:39:07,082 1645   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'productDao'
+2020-09-18 11:39:07,095 1658   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'roleDao'
+2020-09-18 11:39:07,103 1666   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'travellerDao'
+2020-09-18 11:39:07,112 1675   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'userDao'
+2020-09-18 11:39:07,238 1801   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Creating a new SqlSession
+2020-09-18 11:39:07,276 1839   [           main] DEBUG mybatis.spring.SqlSessionUtils  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2805d709] was not registered for synchronization because synchronization is not active
+2020-09-18 11:39:07,309 1872   [           main] DEBUG dbc.datasource.DataSourceUtils  - Fetching JDBC Connection from DataSource
+2020-09-18 11:39:07,512 2075   [           main] ERROR aba.druid.pool.DruidDataSource  - testWhileIdle is true, validationQuery not set
+2020-09-18 11:39:07,541 2104   [           main] INFO  aba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-09-18 11:39:07,989 2552   [           main] DEBUG ction.SpringManagedTransaction  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@548d708a] will not be managed by Spring
+2020-09-18 11:39:07,997 2560   [           main] DEBUG    com.hqs.dao.UserDao.findAll  - ==>  Preparing: select * from users 
+2020-09-18 11:39:08,056 2619   [           main] DEBUG    com.hqs.dao.UserDao.findAll  - ==> Parameters: 
+2020-09-18 11:39:08,103 2666   [           main] DEBUG    com.hqs.dao.UserDao.findAll  - <==      Total: 1
+2020-09-18 11:39:08,107 2670   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2805d709]
+2020-09-18 11:40:41,050 0      [           main] DEBUG ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b71769e
+2020-09-18 11:40:41,746 696    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 8 bean definitions from class path resource [spring/applicationContext-dao.xml]
+2020-09-18 11:40:41,813 763    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-18 11:40:41,851 801    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'mapperScannerConfigurer'
+2020-09-18 11:40:41,929 879    [           main] DEBUG .mapper.ClassPathMapperScanner  - Ignored because not a concrete top-level class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\test-classes\com\hqs\dao\TestMybatis.class]
+2020-09-18 11:40:41,930 880    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\MemberDao.class]
+2020-09-18 11:40:41,930 880    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\OrderDao.class]
+2020-09-18 11:40:41,930 880    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\PermissionDao.class]
+2020-09-18 11:40:41,930 880    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\ProductDao.class]
+2020-09-18 11:40:41,931 881    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\RoleDao.class]
+2020-09-18 11:40:41,931 881    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\TravellerDao.class]
+2020-09-18 11:40:41,931 881    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\idea\project\SSM_essay_01\SSM_dao\target\classes\com\hqs\dao\UserDao.class]
+2020-09-18 11:40:41,953 903    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'memberDao' and 'com.hqs.dao.MemberDao' mapperInterface
+2020-09-18 11:40:41,957 907    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'memberDao'.
+2020-09-18 11:40:41,958 908    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'orderDao' and 'com.hqs.dao.OrderDao' mapperInterface
+2020-09-18 11:40:41,958 908    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'orderDao'.
+2020-09-18 11:40:41,958 908    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'permissionDao' and 'com.hqs.dao.PermissionDao' mapperInterface
+2020-09-18 11:40:41,958 908    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'permissionDao'.
+2020-09-18 11:40:41,958 908    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'productDao' and 'com.hqs.dao.ProductDao' mapperInterface
+2020-09-18 11:40:41,958 908    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2020-09-18 11:40:41,958 908    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'roleDao' and 'com.hqs.dao.RoleDao' mapperInterface
+2020-09-18 11:40:41,959 909    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'roleDao'.
+2020-09-18 11:40:41,959 909    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'travellerDao' and 'com.hqs.dao.TravellerDao' mapperInterface
+2020-09-18 11:40:41,959 909    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'travellerDao'.
+2020-09-18 11:40:41,959 909    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name 'userDao' and 'com.hqs.dao.UserDao' mapperInterface
+2020-09-18 11:40:41,959 909    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name 'userDao'.
+2020-09-18 11:40:41,967 917    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-18 11:40:41,973 923    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-18 11:40:41,978 928    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-18 11:40:41,982 932    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-18 11:40:42,008 958    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean 'datasource'
