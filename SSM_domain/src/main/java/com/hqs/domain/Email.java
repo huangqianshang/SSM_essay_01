@@ -7,6 +7,7 @@ import java.util.Date;
 public class Email {
     private String id;              //uuid  无意义
     private String sendId;          //发送者的id
+    private String title;           //标题
     private String content;         //内容
     private Date sendTime;          //发送的时间
     private String receiveId;       //接收者id
@@ -27,6 +28,14 @@ public class Email {
 
     public void setSendId(String sendId) {
         this.sendId = sendId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {

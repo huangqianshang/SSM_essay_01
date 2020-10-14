@@ -18,5 +18,5 @@ public interface EmailService {
     void save(Email email) ;
 
     //标记已读
-    void setRead(String id);
+    void setRead(String emailId);
 }

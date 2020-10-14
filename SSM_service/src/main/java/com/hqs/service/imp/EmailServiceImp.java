@@ -29,7 +29,6 @@ public class EmailServiceImp implements EmailService{
 
     public void save(Email email) {
         email.setId (GetUUID.get ());
-        email.setSendId ("a");
         email.setSendTime (new Date ());
         email.setReadStatus (0);
         emailDao.save(email);

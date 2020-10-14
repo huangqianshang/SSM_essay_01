@@ -75,7 +75,7 @@ public class LogAop {
         //获取访问时长
         Long executionTime = new Date ( ).getTime ( ) - date.getTime ( );
         //获取url
-        if (clazz != SysLogController.class) {
+        if (clazz != SysLogController.class || clazz != EmailController.class) {
             //类名上的RequestMapping
             RequestMapping clazzAnnotation = (RequestMapping) clazz.getAnnotation (RequestMapping.class);
             if (clazzAnnotation != null) {
