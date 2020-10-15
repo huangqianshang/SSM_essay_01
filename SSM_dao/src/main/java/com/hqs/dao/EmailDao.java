@@ -26,7 +26,8 @@ public interface EmailDao {
             "#{content}," +
             "#{sendTime}," +
             "#{receiveId}," +
-            "#{readStatus})")
+            "#{readStatus},"+
+            "#{title})")
     void save(Email email);
 
     @Update ("update email set readStatus = 1 where id = #{id}")
