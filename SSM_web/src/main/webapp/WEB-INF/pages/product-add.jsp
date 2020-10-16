@@ -287,6 +287,7 @@
         language: 'zh-CN'
     });
 </script>
+<script src="${pageContext.request.contextPath}/plugins/js-my/email-compent.js"></script>
 </body>
 
 </html>

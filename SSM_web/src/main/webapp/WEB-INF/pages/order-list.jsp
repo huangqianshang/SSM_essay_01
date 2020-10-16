@@ -472,7 +472,7 @@
         //获取下拉框的值
         var pageSize = $("#changePageSize").val();
 
-        //向服务器发送请求，改变没页显示条数
+        //向服务器发送请求，改变每页显示条数
         location.href = "/order/findAll?pageNum=1&pageSize="
             + pageSize;
     }
@@ -522,6 +522,7 @@
         });
     });
 </script>
+<script src="${pageContext.request.contextPath}/plugins/js-my/email-compent.js"></script>
 </body>
 
 </html>
