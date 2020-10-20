@@ -5,8 +5,8 @@ import com.hqs.domain.Role;
 import java.util.List;
 
 public interface RoleService {
-    //查询所有
-    List< Role> findAll();
+    //分页查询所有
+    List< Role> findAll(int pageNum, int pageSize);
 
     //添加角色
     void save(Role role);
@@ -19,4 +19,7 @@ public interface RoleService {
 
     //给角色添加资源权限
     void addPermissionToRole(String roleId, String ids);
+
+    //查询角色总个数
+    int findTotalRole();
 }

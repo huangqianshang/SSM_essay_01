@@ -1,5 +1,6 @@
 package com.hqs.service.imp;
 
+import com.github.pagehelper.PageHelper;
 import com.hqs.dao.ProductDao;
 import com.hqs.domain.Product;
 import com.hqs.service.ProductService;
@@ -16,7 +17,8 @@ public class ProductServiceImp implements ProductService {
     @Autowired
     private ProductDao productDao;
 
-    public List < Product > findAll() {
+    public List < Product > findAll(int pageNum, int pageSize) {
+        PageHelper.startPage (pageNum,pageSize);
         return productDao.findAll ( );
     }
 
@@ -37,5 +39,9 @@ public class ProductServiceImp implements ProductService {
             e.printStackTrace ( );
         }
         productDao.add(product);
+    }
+
+    public int findTotalProduct() {
+        return productDao.findTotalProduct();
     }
 }

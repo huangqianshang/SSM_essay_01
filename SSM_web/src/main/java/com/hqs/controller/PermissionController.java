@@ -1,12 +1,15 @@
 package com.hqs.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.hqs.domain.Permission;
+import com.hqs.domain.Product;
 import com.hqs.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -20,9 +23,16 @@ public class PermissionController {
     private PermissionService permissionService;
 
     @RequestMapping("/findAll")
-    public String findAll(Model model){
-        List < Permission > permissionList = permissionService.findAll();
-        model.addAttribute ("permissionList",permissionList);
+    public String findAll(Model model, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "4") int pageSize){
+        List < Permission > permissionList = permissionService.findAll(pageNum,pageSize);
+        PageInfo < Permission > pageInfo = new PageInfo < Permission> ();
+        pageInfo.setPageNum (pageNum);
+        pageInfo.setPageSize (pageSize);
+        int count = permissionService.findTotalPermission();
+        pageInfo.setSize (count);
+        pageInfo.setList (permissionList);
+        pageInfo.setPages (count%pageSize==0?count/pageSize:count/pageSize+1);
+        model.addAttribute ("pageInfo",pageInfo);
         return "permission-list";
     }
 

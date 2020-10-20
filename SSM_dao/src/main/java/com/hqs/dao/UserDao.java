@@ -32,4 +32,7 @@ public interface UserDao {
 
     @Select ("select id from users where username = #{userName}")
     String findIdByUsername(String userName);
+
+    @Select("select count(*) from users")
+    int findTotalUser();
 }

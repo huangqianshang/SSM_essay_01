@@ -1,5 +1,6 @@
 package com.hqs.service.imp;
 
+import com.github.pagehelper.PageHelper;
 import com.hqs.dao.SysLogDao;
 import com.hqs.domain.SysLog;
 import com.hqs.service.SysLogService;
@@ -17,7 +18,12 @@ public class SysLogServiceImp implements SysLogService {
         sysLogDao.save(sysLog);
     }
 
-    public List < SysLog > findAll() {
+    public List < SysLog > findAll(int pageNum, int pageSize) {
+        PageHelper.startPage (pageNum,pageSize);
         return sysLogDao.findAll();
+    }
+
+    public int findTotalLog() {
+        return sysLogDao.findTotalLog();
     }
 }

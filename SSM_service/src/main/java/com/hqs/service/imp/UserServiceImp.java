@@ -1,5 +1,6 @@
 package com.hqs.service.imp;
 
+import com.github.pagehelper.PageHelper;
 import com.hqs.dao.UserDao;
 import com.hqs.domain.Role;
 import com.hqs.domain.UserInfo;
@@ -41,7 +42,8 @@ public class UserServiceImp implements UserService {
         return authorities;
     }
 
-    public List < UserInfo > findAll() {
+    public List < UserInfo > findAll(int pageNum,int pageSize) {
+        PageHelper.startPage (pageNum,pageSize);
         return userDao.findAll();
     }
 
@@ -65,5 +67,9 @@ public class UserServiceImp implements UserService {
 
     public String findIdByUsername(String receiveName) {
         return userDao.findIdByUsername(receiveName);
+    }
+
+    public int findTotalUser() {
+        return userDao.findTotalUser();
     }
 }

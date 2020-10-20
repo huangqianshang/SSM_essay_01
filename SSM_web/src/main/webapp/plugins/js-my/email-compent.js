@@ -1,5 +1,5 @@
 var flag = true;
-$(function () {
+$(document).ready(function () {
     findNewEmailNum();
     setInterval("findNewEmailNum()",5000);
     $("#newEmailNum").click(function () {
@@ -9,5 +9,6 @@ $(function () {
             flag = aria_expanded == "true" ? true : false;
         else
             flag = false;
+
     });
 });

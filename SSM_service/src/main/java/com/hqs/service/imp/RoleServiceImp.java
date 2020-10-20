@@ -1,5 +1,6 @@
 package com.hqs.service.imp;
 
+import com.github.pagehelper.PageHelper;
 import com.hqs.dao.RoleDao;
 import com.hqs.domain.Role;
 import com.hqs.service.RoleService;
@@ -14,7 +15,8 @@ public class RoleServiceImp implements RoleService {
     @Autowired
     private RoleDao roleDao;
 
-    public List < Role > findAll() {
+    public List < Role > findAll(int pageNum, int pageSize) {
+        PageHelper.startPage (pageNum,pageSize);
         return roleDao.findAll();
     }
 
@@ -33,5 +35,9 @@ public class RoleServiceImp implements RoleService {
 
     public void addPermissionToRole(String roleId, String ids) {
         roleDao.addPermissionToRole(roleId,ids);
+    }
+
+    public int findTotalRole() {
+        return roleDao.findTotalRole();
     }
 }

@@ -29,4 +29,7 @@ public interface RoleDao {
 
     @Insert ("insert into role_permission values (#{permissionId},#{roleId})")
     void addPermissionToRole(@Param ("roleId") String roleId,@Param ("permissionId") String ids);
+
+    @Select ("select count(*) from role")
+    int findTotalRole();
 }

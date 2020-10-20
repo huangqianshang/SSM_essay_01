@@ -143,7 +143,7 @@
 								</thead>
 								<tbody>
 
-									<c:forEach items="${roleList}" var="role">
+									<c:forEach items="${pageInfo.list}" var="role">
 										<tr>
 											<td><input name="ids" type="checkbox"></td>
 											<td>${role.id }</td>
@@ -179,7 +179,7 @@
 					<div class="box-footer">
 						<div class="pull-left">
 							<div class="form-group form-inline">
-								总共2 页，共14 条数据。 每页 <select class="form-control">
+                                总共${pageInfo.pages} 页，共${pageInfo.size} 条数据。 每页 <select class="form-control" id="changePageSize" onchange="changePageSize()">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -191,15 +191,20 @@
 
 						<div class="box-tools pull-right">
 							<ul class="pagination">
-								<li><a href="#" aria-label="Previous">首页</a></li>
-								<li><a href="#">上一页</a></li>
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">下一页</a></li>
-								<li><a href="#" aria-label="Next">尾页</a></li>
+                                <li>
+                                    <a href="${pageContext.request.contextPath}/role/findAll?pageNum=1&pageSize=${pageInfo.pageSize}" aria-label="Previous">首页</a>
+                                </li>
+                                <li><a href="${pageContext.request.contextPath}/role/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}">上一页</a></li>
+                                <c:forEach begin="1" end="${pageInfo.pages}" var="pageNumber">
+
+                                    <li><a href="${pageContext.request.contextPath}/role/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}">${pageNumber}</a></li>
+
+                                </c:forEach>
+
+                                <li><a href="${pageContext.request.contextPath}/role/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}">下一页</a></li>
+                                <li>
+                                    <a href="${pageContext.request.contextPath}/role/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}" aria-label="Next">尾页</a>
+                                </li>
 							</ul>
 						</div>
 
@@ -285,6 +290,18 @@
 					locale : 'zh-CN'
 				});
 			});
+
+            function changePageSize() {
+                //获取下拉框的值
+                var pageSize = $("#changePageSize").val();
+
+                //向服务器发送请求，改变每页显示条数
+                location.href = "/role/findAll?pageNum=1&pageSize="
+                    + pageSize;
+            }
+            $(function(){
+                $("#changePageSize").val(${pageInfo.pageSize});
+            });
 
 			// 设置激活菜单
 			function setSidebarActive(tagUri) {

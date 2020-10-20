@@ -1,5 +1,6 @@
 package com.hqs.service.imp;
 
+import com.github.pagehelper.PageHelper;
 import com.hqs.dao.PermissionDao;
 import com.hqs.domain.Permission;
 import com.hqs.service.PermissionService;
@@ -14,7 +15,8 @@ public class PermissionServiceImp implements PermissionService {
     @Autowired
     private PermissionDao permissionDao;
 
-    public List < Permission > findAll() {
+    public List < Permission > findAll(int pageNum, int pageSize) {
+        PageHelper.startPage (pageNum,pageSize);
         return permissionDao.findAll();
     }
 
@@ -25,5 +27,9 @@ public class PermissionServiceImp implements PermissionService {
 
     public List < Permission > findByRoleId(String id) {
         return permissionDao.findNotInByRoleId (id);
+    }
+
+    public int findTotalPermission() {
+        return permissionDao.findTotalPermission();
     }
 }

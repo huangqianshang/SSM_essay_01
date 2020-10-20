@@ -16,6 +16,9 @@ public interface SysLogDao {
             "#{method})")
     void save(SysLog sysLog);
 
-    @Select ("select * from syslog")
+    @Select ("select * from syslog ORDER BY visitTime DESC")
     List< SysLog> findAll();
+
+    @Select ("select count(*) from syslog")
+    int findTotalLog();
 }
