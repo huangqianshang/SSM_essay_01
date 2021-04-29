@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface RoleService {
     //分页查询所有
-    List< Role> findAll(int pageNum, int pageSize);
+    List< Role> findAll(int pageNum, int pageSize,String keyValue);
 
     //添加角色
     void save(Role role);
@@ -22,4 +22,7 @@ public interface RoleService {
 
     //查询角色总个数
     int findTotalRole();
+
+    //根据id删除角色
+    int deleteByIds(String ids);
 }

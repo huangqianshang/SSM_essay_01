@@ -129,10 +129,9 @@
     <!-- 导航侧栏 /-->
 
     <!-- 内容区域 -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="context">
 
-        <img src="img/8.jpg" style="width:100%;">
-
+        <img src="img/8.jpg" style="width:100%;" id="Img">
     </div>
     <!-- 内容区域 /-->
 
@@ -194,7 +193,6 @@
 <script src="plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
 <script src="plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 <script>
-
     $(document).ready(function () {
         // 选择框
         $(".select2").select2();
@@ -203,8 +201,40 @@
         $(".textarea").wysihtml5({
             locale: 'zh-CN'
         });
+        // 激活导航位置
+        setSidebarActive("admin-index");
     });
 
+    var flag = true;
+    $(function(){
+        console.log("");
+        setInterval("findNewEmailNum()",5000);
+        $("#newEmailNum").click(function () {
+            findNewEmail(flag);
+            var aria_expanded = $("#newEmailNum").attr("aria-expanded");
+            if (aria_expanded != undefined)
+                flag = aria_expanded == "true" ? true : false;
+            else
+                flag = false;
+
+        });
+        // $("#admin-login").click(function () {
+        //     console.log("点击了左边的导航");
+        //     if($("#Img") !== undefined){
+        //         $("#Img").attr("display","none");
+        //     }
+        //     $("#context").html(' <iframe src = "/user/findAll" width="100%" height="auto" scrolling="no" id="iframe"></iframe>');
+        //
+        //     var iframe = $("#iframe");
+        //     var bHeight = iframe[0].contentWindow.document.body.scrollHeight;
+        //     var dHeight = iframe[0].contentWindow.document.documentElement.scrollHeight;
+        //     var height = Math.max(bHeight, dHeight);
+        //     if(height < 876){
+        //         height = 876;
+        //     }
+        //     iframe.attr("height",height);
+        // });
+    });
 
     // 设置激活菜单
     function setSidebarActive(tagUri) {
@@ -215,13 +245,8 @@
         }
     }
 
-    $(document).ready(function () {
-        // 激活导航位置
-        setSidebarActive("admin-index");
-    });
 
 </script>
-<script src="${pageContext.request.contextPath}/plugins/js-my/email-compent.js"></script>
 </body>
 
 </html>

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -35,7 +36,7 @@ public class ProductController {
     }
 
     //跳转到product-add.jsp
-    @RequestMapping("linkToAdd")
+    @RequestMapping("/linkToAdd")
     public String linkToAdd(){
         return "product-add";
     }
@@ -45,5 +46,17 @@ public class ProductController {
     public void add(HttpServletResponse response,Product product,String String_DepartureTime,String String_productStatus) throws IOException {
         productService.add (product,String_DepartureTime,String_productStatus);
         response.sendRedirect ("findAll");
+    }
+
+    @ResponseBody
+    @RequestMapping("/deleteByIds")
+    public int deleteByIds(HttpServletResponse response,String ids) throws IOException {
+        return productService.deleteByIds(ids);
+    }
+
+    @ResponseBody
+    @RequestMapping("/updateProductStatus")
+    public int updateProductStatus(String ids,int productStatus) throws IOException {
+        return productService.updateProductStatus(ids,productStatus);
     }
 }

@@ -100,10 +100,10 @@
                     <div class="panel-heading">用户信息</div>
                     <div class="row data-type">
 
-                        <div class="col-md-2 title">用户名称</div>
+                        <div class="col-md-2 title">用户账号</div>
                         <div class="col-md-4 data">
                             <input type="text" class="form-control" name="username"
-                                   placeholder="用户名称" value="">
+                                   placeholder="用户账号" value="">
                         </div>
                         <div class="col-md-2 title">密码</div>
                         <div class="col-md-4 data">

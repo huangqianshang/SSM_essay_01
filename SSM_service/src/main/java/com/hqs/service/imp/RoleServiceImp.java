@@ -15,9 +15,9 @@ public class RoleServiceImp implements RoleService {
     @Autowired
     private RoleDao roleDao;
 
-    public List < Role > findAll(int pageNum, int pageSize) {
+    public List < Role > findAll(int pageNum, int pageSize, String keyValue) {
         PageHelper.startPage (pageNum,pageSize);
-        return roleDao.findAll();
+        return roleDao.findAll("%"+keyValue+"%");
     }
 
     public void save(Role role) {
@@ -39,5 +39,10 @@ public class RoleServiceImp implements RoleService {
 
     public int findTotalRole() {
         return roleDao.findTotalRole();
+    }
+
+    public int deleteByIds(String ids){
+        ids = ids.substring(0,ids.length()-1);
+        return roleDao.deleteByIds(ids);
     }
 }

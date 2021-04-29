@@ -1,6 +1,5 @@
 var flag = true;
 $(document).ready(function () {
-    findNewEmailNum();
     setInterval("findNewEmailNum()",5000);
     $("#newEmailNum").click(function () {
         findNewEmail(flag);

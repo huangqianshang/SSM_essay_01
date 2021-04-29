@@ -32,4 +32,9 @@ public class PermissionServiceImp implements PermissionService {
     public int findTotalPermission() {
         return permissionDao.findTotalPermission();
     }
+
+    public int deleteByIds(String ids){
+        ids = ids.substring(0,ids.length()-1);
+        return permissionDao.deleteByIds(ids);
+    }
 }

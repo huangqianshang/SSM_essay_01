@@ -44,4 +44,14 @@ public class ProductServiceImp implements ProductService {
     public int findTotalProduct() {
         return productDao.findTotalProduct();
     }
+
+    public int deleteByIds(String ids){
+        ids = ids.substring(0,ids.length()-1);
+        return productDao.deleteByIds(ids);
+    }
+
+    public int updateProductStatus(String ids, int productStatus){
+        ids = ids.substring(0,ids.length()-1);
+        return productDao.updateProductStatus(ids,productStatus);
+    }
 }

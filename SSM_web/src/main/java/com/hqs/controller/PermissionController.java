@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -45,5 +46,11 @@ public class PermissionController {
     public void save(Permission permission, HttpServletResponse response) throws IOException {
         permissionService.save(permission);
         response.sendRedirect ("findAll");
+    }
+
+    @ResponseBody
+    @RequestMapping("/deleteByIds")
+    public int deleteByIds(HttpServletResponse response,String ids) throws IOException {
+        return permissionService.deleteByIds(ids);
     }
 }

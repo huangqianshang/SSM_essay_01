@@ -1,6 +1,7 @@
 package com.hqs.dao;
 
 import com.hqs.domain.Permission;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
@@ -21,4 +22,7 @@ public interface PermissionDao {
 
     @Select ("select count(*) from permission")
     int findTotalPermission();
+
+    @Delete("delete from permission where id in (#{ids}) ")
+    int deleteByIds(String ids);
 }

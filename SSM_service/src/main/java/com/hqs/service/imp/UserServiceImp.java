@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service("userService")
@@ -42,9 +43,9 @@ public class UserServiceImp implements UserService {
         return authorities;
     }
 
-    public List < UserInfo > findAll(int pageNum,int pageSize) {
+    public List < UserInfo > findAll(int pageNum,int pageSize,String keyValue) {
         PageHelper.startPage (pageNum,pageSize);
-        return userDao.findAll();
+        return userDao.findAll("%"+keyValue+"%");
     }
 
     public void save(UserInfo user) {
@@ -54,7 +55,8 @@ public class UserServiceImp implements UserService {
     }
 
     public UserInfo findById(String id) {
-        return userDao.findById(id);
+        UserInfo user = userDao.findById(id);
+        return user;
     }
 
     public void addRole(String ids, String userId) {
@@ -71,5 +73,17 @@ public class UserServiceImp implements UserService {
 
     public int findTotalUser() {
         return userDao.findTotalUser();
+    }
+
+    public void update(UserInfo user){
+        if( !user.getPassword().contains("$2a") ){
+            user.setPassword (bCryptPasswordEncoder.encode (user.getPassword ()));
+        }
+        userDao.update(user);
+    }
+
+    public int deleteByIds(String ids){
+        ids = ids.substring(0,ids.length()-1);
+        return userDao.deleteByIds(ids);
     }
 }

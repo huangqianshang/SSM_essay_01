@@ -111,8 +111,10 @@
 										<button type="button" class="btn btn-default" title="新建" onclick="location.href='/permission/linkToAdd'">
 											<i class="fa fa-file-o"></i> 新建
 										</button>
-										
-										<button type="button" class="btn btn-default" title="刷新">
+                                        <button type="button" class="btn btn-default" title="新建" onclick="del()">
+                                            <i class="fa fa-file-o"></i> 删除
+                                        </button>
+										<button type="button" class="btn btn-default" title="刷新" onclick="refresh()">
 											<i class="fa fa-refresh"></i> 刷新
 										</button>
 									</div>
@@ -138,7 +140,7 @@
 										<th class="sorting_asc">ID</th>
 										<th class="sorting_desc">权限名称</th>
 										<th class="sorting_asc sorting_asc_disabled">URL</th>
-										<th class="text-center">操作</th>
+<%--										<th class="text-center">操作</th>--%>
 									</tr>
 								</thead>
 								<tbody>
@@ -149,10 +151,10 @@
 											<td>${p.id }</td>
 											<td>${p.permissionName }</td>
 											<td>${p.url }</td>
-											<td class="text-center">
-												<a href="${pageContext.request.contextPath}/role/findById.do?id=${p.id}" class="btn bg-olive btn-xs">详情</a>
-												<a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole.do?id=${p.id}" class="btn bg-olive btn-xs">添加角色</a>
-											</td>
+<%--											<td class="text-center">--%>
+<%--												<a href="${pageContext.request.contextPath}/role/findById.do?id=${p.id}" class="btn bg-olive btn-xs">详情</a>--%>
+<%--												<a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole.do?id=${p.id}" class="btn bg-olive btn-xs">添加角色</a>--%>
+<%--											</td>--%>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -311,6 +313,27 @@
             $(function(){
                 $("#changePageSize").val(${pageInfo.pageSize});
             });
+
+            function del(){
+                var idList = $("#dataList tr");
+                var checkList = document.getElementsByName("ids");
+                var ids = "";
+                for(var i = 1; i < idList.length; i++){
+                    if( true == checkList[i-1].checked ){
+                        ids += idList[i].children[1].textContent+",";
+                    }
+                }
+                $.ajax({
+                    url: "/permission/deleteByIds",
+                    type: "post",
+                    data: {ids:ids},
+                    success:function(data){
+                        if(data > 0){
+                            refresh();
+                        }
+                    }
+                });
+            }
 
 			$(document)
 					.ready(

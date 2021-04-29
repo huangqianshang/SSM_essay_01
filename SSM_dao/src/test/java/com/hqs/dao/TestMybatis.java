@@ -42,12 +42,5 @@ public class TestMybatis {
         product.setProductPrice (1000);
         dao.add (product);
     }
-    @Test
-    public void k(){
-        List < UserInfo > all = userDao.findAll ( );
-        for (UserInfo u:
-             all) {
-            System.out.println (u );
-        }
-    }
+
 }

@@ -140,7 +140,7 @@
         <section class="content-header">
             <h1>
                 数据管理
-                <small>数据列表</small>
+                <small>全部产品</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
@@ -168,19 +168,19 @@
                         <div class="pull-left">
                             <div class="form-group form-inline">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default" title="新建"><i
-                                            class="fa fa-file-o" onclick="location.href='/product/linkToAdd'"></i> 新建
+                                    <button type="button" class="btn btn-default" title="新建" onclick="location.href='/product/linkToAdd'"><i
+                                            class="fa fa-file-o" ></i> 新建
                                     </button>
-                                    <button type="button" class="btn btn-default" title="删除"><i
+                                    <button type="button" class="btn btn-default" title="删除" onclick="del()"><i
                                             class="fa fa-trash-o" ></i> 删除
                                     </button>
-                                    <button type="button" class="btn btn-default" title="开启"><i class="fa fa-check"></i>
+                                    <button type="button" class="btn btn-default" title="开启" onclick="setState(1)"><i class="fa fa-check"></i>
                                         开启
                                     </button>
-                                    <button type="button" class="btn btn-default" title="屏蔽"><i class="fa fa-ban"></i>
-                                        屏蔽
+                                    <button type="button" class="btn btn-default" title="关闭" onclick="setState(0)"><i class="fa fa-ban"></i>
+                                        关闭
                                     </button>
-                                    <button type="button" class="btn btn-default" title="刷新"><i
+                                    <button type="button" class="btn btn-default" title="刷新" onclick="location.reload()"><i
                                             class="fa fa-refresh"></i> 刷新
                                     </button>
                                 </div>
@@ -245,35 +245,6 @@
                         </table>
                         <!--数据列表/-->
 
-                        <!--工具栏-->
-                        <div class="pull-left">
-                            <div class="form-group form-inline">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default" title="新建"><i
-                                            class="fa fa-file-o"></i> 新建
-                                    </button>
-                                    <button type="button" class="btn btn-default" title="删除"><i
-                                            class="fa fa-trash-o"></i> 删除
-                                    </button>
-                                    <button type="button" class="btn btn-default" title="开启"><i class="fa fa-check"></i>
-                                        开启
-                                    </button>
-                                    <button type="button" class="btn btn-default" title="屏蔽"><i class="fa fa-ban"></i>
-                                        屏蔽
-                                    </button>
-                                    <button type="button" class="btn btn-default" title="刷新"><i
-                                            class="fa fa-refresh"></i> 刷新
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-tools pull-right">
-                            <div class="has-feedback">
-                                <input type="text" class="form-control input-sm" placeholder="搜索">
-                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <!--工具栏/-->
 
                     </div>
                     <!-- 数据表格 /-->
@@ -418,6 +389,47 @@
         $("#changePageSize").val(${pageInfo.pageSize});
     });
 
+    function del(){
+        var idList = $("#dataList tr");
+        var checkList = document.getElementsByName("ids");
+        var ids = "";
+        for(var i = 1; i < idList.length; i++){
+            if( true == checkList[i-1].checked ){
+                ids += idList[i].children[1].textContent+",";
+            }
+        }
+        $.ajax({
+            url: "/product/deleteByIds",
+            type: "post",
+            data: {ids:ids},
+            success:function(data){
+                if(data > 0){
+                    refresh();
+                }
+            }
+        });
+    }
+
+    function setState(productStatus){
+        var idList = $("#dataList tr");
+        var checkList = document.getElementsByName("ids");
+        var ids = "";
+        for(var i = 1; i < idList.length; i++){
+            if( true == checkList[i-1].checked ){
+                ids += idList[i].children[1].textContent+",";
+            }
+        }
+        $.ajax({
+            url: "/product/updateProductStatus",
+            type: "post",
+            data: {ids:ids,productStatus:productStatus},
+            success:function(data){
+                if(data > 0){
+                    refresh();
+                }
+            }
+        });
+    }
 
     $(document).ready(function () {
 

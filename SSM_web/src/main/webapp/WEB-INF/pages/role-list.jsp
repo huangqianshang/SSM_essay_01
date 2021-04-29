@@ -111,8 +111,10 @@
 										<button type="button" class="btn btn-default" title="新建" onclick="location.href='/role/linkToAdd'">
 											<i class="fa fa-file-o"></i> 新建
 										</button>
-										
-										<button type="button" class="btn btn-default" title="刷新">
+                                        <button type="button" class="btn btn-default" title="新建" onclick="del()">
+                                            <i class="fa fa-file-o"></i> 删除
+                                        </button>
+										<button type="button" class="btn btn-default" title="刷新" onclick="refresh()">
 											<i class="fa fa-refresh"></i> 刷新
 										</button>
 									</div>
@@ -120,8 +122,8 @@
 							</div>
 							<div class="box-tools pull-right">
 								<div class="has-feedback">
-									<input type="text" class="form-control input-sm"
-										placeholder="搜索"> <span
+									<input type="text" class="form-control input-sm" id="keyValue"
+										placeholder="搜索" onclick="search()" value=${keyValue} > <span
 										class="glyphicon glyphicon-search form-control-feedback"></span>
 								</div>
 							</div>
@@ -303,7 +305,41 @@
                 $("#changePageSize").val(${pageInfo.pageSize});
             });
 
-			// 设置激活菜单
+            function search(){
+                //条件查询
+                var value = $("#keyValue").val();
+                var oValue = location.search.toString().split("keyValue=")[1];
+                if(value == oValue){
+                    return;
+                }
+                location.href = '/role/findAll?pageNum='+1+
+                    '&pageSize='+${pageInfo.pageSize}
+                    +'&keyValue='+value;
+            }
+
+            function del(){
+                var idList = $("#dataList tr");
+                var checkList = document.getElementsByName("ids");
+                var ids = "";
+                for(var i = 1; i < idList.length; i++){
+                    if( true == checkList[i-1].checked ){
+                        ids += idList[i].children[1].textContent+",";
+                    }
+                }
+                $.ajax({
+                    url: "/role/deleteByIds",
+                    type: "post",
+                    data: {ids:ids},
+                    success:function(data){
+                        if(data > 0){
+                            refresh();
+                        }
+                    }
+                });
+            }
+
+
+            // 设置激活菜单
 			function setSidebarActive(tagUri) {
 				var liObj = $("#" + tagUri);
 				if (liObj.length > 0) {

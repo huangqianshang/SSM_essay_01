@@ -13,4 +13,10 @@ public interface ProductService {
 
     //查询总数目
     int findTotalProduct();
+
+    //删除
+    int deleteByIds(String ids);
+
+    //更新状态
+    int updateProductStatus(String ids, int productStatus);
 }

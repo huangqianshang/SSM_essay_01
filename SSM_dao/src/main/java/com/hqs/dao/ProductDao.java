@@ -2,8 +2,7 @@ package com.hqs.dao;
 
 
 import com.hqs.domain.Product;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -26,4 +25,10 @@ public interface ProductDao {
     //查找产品总数目
     @Select ("select count(*) from product")
     int findTotalProduct();
+
+    @Delete("delete from product where id in (#{ids}) ")
+    int deleteByIds(String ids);
+
+    @Update("update product set productStatus= #{productStatus} where id in (#{ids})")
+    int updateProductStatus(@Param("ids") String ids,@Param("productStatus") int productStatus);
 }

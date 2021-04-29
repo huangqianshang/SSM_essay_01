@@ -79,15 +79,15 @@
         <!-- 内容头部 -->
         <section class="content-header">
             <h1>
-                角色管理 <small>全部角色</small>
+                邮件管理 <small>全部邮件</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="${pageContext.request.contextPath}/index.jsp"><i
                         class="fa fa-dashboard"></i> 首页</a></li>
                 <li><a
-                        href="${pageContext.request.contextPath}/role/findAll.do">角色管理</a></li>
+                        href="${pageContext.request.contextPath}/email/findAll.do">邮件管理</a></li>
 
-                <li class="active">全部角色</li>
+                <li class="active">全部邮件</li>
             </ol>
         </section>
         <!-- 内容头部 /-->
@@ -111,23 +111,22 @@
                                     <button type="button" class="btn btn-default" title="新建" onclick="location.href='/email/linkToSend'">
                                         <i class="fa fa-file-o"></i> 发送
                                     </button>
-                                    <button type="button" class="btn btn-default" title="新建" onclick="location.href='/role/linkToAdd'">
-                                        <i class="fa fa-file-o"></i> 删除
-                                    </button>
-
-                                    <button type="button" class="btn btn-default" title="刷新">
+<%--                                    <button type="button" class="btn btn-default" title="新建" onclick="location.href='/role/linkToAdd'">--%>
+<%--                                        <i class="fa fa-file-o"></i> 删除--%>
+<%--                                    </button>--%>
+                                    <button type="button" class="btn btn-default" title="刷新" onclick="location.reload()">
                                         <i class="fa fa-refresh"></i> 刷新
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="box-tools pull-right">
-                            <div class="has-feedback">
-                                <button type="button" class="btn btn-default" >
-                                    <i class="fa fa-refresh"></i> 我发送的邮件
-                                </button>
-                            </div>
-                        </div>
+<%--                        <div class="box-tools pull-right">--%>
+<%--                            <div class="has-feedback">--%>
+<%--                                <button type="button" class="btn btn-default" id="btn">--%>
+<%--                                    <i class="fa fa-refresh"></i> 我发送的邮件--%>
+<%--                                </button>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
                         <!--工具栏/-->
 
                         <!--数据列表-->
@@ -147,7 +146,7 @@
                             </thead>
                             <tbody>
 
-                            <c:forEach items="${emailList}" var="email">
+                            <c:forEach items="${pageInfo.list}" var="email">
                                 <tr>
                                     <td><input name="ids" type="checkbox"></td>
                                     <td>${email.getStringReadStatus() }</td>
@@ -155,7 +154,7 @@
                                     <td><span style="font-weight: bold;font-size: large">${email.title}</span>${email.content }</td>
                                     <td>${email.getFormatTime() }</td>
                                     <td class="text-center">
-                                        <a href="${pageContext.request.contextPath}/role/showMoreById?id=${role.id}" class="btn bg-olive btn-xs">详情</a>
+                                        <a href="${pageContext.request.contextPath}/email/showMoreById?id=${email.id}" class="btn bg-olive btn-xs">详情</a>
                                         <a href="${pageContext.request.contextPath}/email/setRead?emailId=${email.id}" class="btn bg-olive btn-xs">标记已读</a>
                                     </td>
                                 </tr>
@@ -184,7 +183,7 @@
                 <div class="box-footer">
                     <div class="pull-left">
                         <div class="form-group form-inline">
-                            总共2 页，共14 条数据。 每页 <select class="form-control">
+                            总共${pageInfo.pages} 页，共${pageInfo.size} 条数据。 每页 <select class="form-control" id="changePageSize" onchange="changePageSize()">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -196,15 +195,20 @@
 
                     <div class="box-tools pull-right">
                         <ul class="pagination">
-                            <li><a href="#" aria-label="Previous">首页</a></li>
-                            <li><a href="#">上一页</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">下一页</a></li>
-                            <li><a href="#" aria-label="Next">尾页</a></li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/email/findAll?pageNum=1&pageSize=${pageInfo.pageSize}" aria-label="Previous">首页</a>
+                            </li>
+                            <li><a href="${pageContext.request.contextPath}/email/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}">上一页</a></li>
+                            <c:forEach begin="1" end="${pageInfo.pages}" var="pageNumber">
+
+                                <li><a href="${pageContext.request.contextPath}/email/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}">${pageNumber}</a></li>
+
+                            </c:forEach>
+
+                            <li><a href="${pageContext.request.contextPath}/email/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}">下一页</a></li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/email/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}" aria-label="Next">尾页</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -299,6 +303,17 @@
             liObj.addClass("active");
         }
     }
+    function changePageSize() {
+        //获取下拉框的值
+        var pageSize = $("#changePageSize").val();
+
+        //向服务器发送请求，改变每页显示条数
+        location.href = "/email/findAll?pageNum=1&pageSize="
+            + pageSize;
+    }
+    $(function(){
+        $("#changePageSize").val(${pageInfo.pageSize});
+    });
 
     $(document)
         .ready(

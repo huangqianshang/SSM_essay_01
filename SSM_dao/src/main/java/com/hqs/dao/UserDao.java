@@ -12,8 +12,8 @@ public interface UserDao {
     })
     UserInfo loadUserByUsername(String username);
 
-    @Select ("select * from users")
-    List< UserInfo> findAll();
+    @Select ("select * from users where username like #{keyValue}")
+    List< UserInfo> findAll(String keyValue);
 
     @Insert ("insert into users values (#{id},#{email},#{username},#{password},#{phoneNum},#{status})")
     void save(UserInfo user);
@@ -35,4 +35,10 @@ public interface UserDao {
 
     @Select("select count(*) from users")
     int findTotalUser();
+
+    @Update("update users set email=#{email},username=#{username},password=#{password},phoneNum=#{phoneNum},status=#{status} where id = #{id}")
+    void update(UserInfo user);
+
+    @Delete("delete from users where id in (#{ids}) ")
+    int deleteByIds(String ids);
 }

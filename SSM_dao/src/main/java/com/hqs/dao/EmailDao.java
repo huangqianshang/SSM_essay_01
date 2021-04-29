@@ -21,6 +21,9 @@ public interface EmailDao {
     })
     List< Email> findAll(String receiveId);
 
+    @Select ("select count(*) from email where receiveId = #{receiveId}")
+    int findTotalEmail(String receiveId);
+
     @Insert ("insert into email values (#{id}," +
             "#{sendId}," +
             "#{content}," +
@@ -32,4 +35,10 @@ public interface EmailDao {
 
     @Update ("update email set readStatus = 1 where id = #{id}")
     void setRead(String id);
+
+    @Select("select * from email where id = #{id}")
+    @Results({
+            @Result(property = "user",column = "sendId",javaType = UserInfo.class,one = @One(select = "com.hqs.dao.UserDao.findById"))
+    })
+    Email findById(String id);
 }

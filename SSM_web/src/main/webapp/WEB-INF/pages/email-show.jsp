@@ -1,13 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 66666
-  Date: 2020/9/18
-  Time: 11:02
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" isELIgnored="false" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <!-- 页面meta -->
@@ -85,15 +79,15 @@
         <!-- 内容头部 -->
         <section class="content-header">
             <h1>
-                用户管理 <small>全部用户</small>
+                邮件管理 <small>详情</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="${pageContext.request.contextPath}/index.jsp"><i
                         class="fa fa-dashboard"></i> 首页</a></li>
                 <li><a
-                        href="${pageContext.request.contextPath}/user/findAll">用户管理</a></li>
+                        href="${pageContext.request.contextPath}/email/findAll.do">邮件管理</a></li>
 
-                <li class="active">全部用户</li>
+                <li class="active">详情</li>
             </ol>
         </section>
         <!-- 内容头部 /-->
@@ -106,141 +100,78 @@
                 </div>
 
                 <div class="box-body">
+                    <!--工具栏-->
+                    <div class="pull-left">
+                        <div class="form-group form-inline">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default" title="新建" onclick="history.back(-1)">
+                                    <i class="fa fa-file-o"></i> 返回
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
+                    <br><br>
+                    <!--工具栏/-->
                     <!-- 数据表格 -->
                     <div class="table-box">
 
-                        <!--工具栏-->
-                        <div class="pull-left">
-                            <div class="form-group form-inline">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default" title="新建" onclick="location.href='/user/linkToAdd'">
-                                        <i class="fa fa-file-o"></i> 新建
-                                    </button>
-                                    <button type="button" class="btn btn-default" title="新建" onclick="del()">
-                                         <i class="fa fa-file-o"></i> 删除
-                                    </button>
-                                    <button type="button" class="btn btn-default" title="刷新" onclick="refresh()">
-                                        <i class="fa fa-refresh"></i> 刷新
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-tools pull-right">
-                            <div class="has-feedback">
-                                <input type="text" class="form-control input-sm" id="keyValue" value="${keyValue}"
-                                       placeholder="搜索" onblur="search()" onclick="search()"> <span
-                                    class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <!--工具栏/-->
+
 
                         <!--数据列表-->
-                        <table id="dataList"
-                               class="table table-bordered table-striped table-hover dataTable">
-                            <thead>
-                            <tr>
-                                <th class="" style="padding-right: 0px"><input
-                                        id="selall" type="checkbox" class="icheckbox_square-blue">
-                                </th>
-                                <th class="sorting_asc">ID</th>
-                                <th class="sorting_desc">用户名</th>
-                                <th class="sorting_asc sorting_asc_disabled">邮箱</th>
-                                <th class="sorting_desc sorting_desc_disabled">联系电话</th>
-                                <th class="sorting">状态</th>
-                                <th class="text-center">操作</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">邮件信息</div>
+                                <div class="row data-type">
 
-                            <c:forEach items="${pageInfo.list}" var="user">
-                                <tr>
-                                    <td><input name="ids" type="checkbox"></td>
-                                    <td>${user.id }</td>
-                                    <td>${user.username }</td>
-                                    <td>${user.email }</td>
-                                    <td>${user.phoneNum }</td>
-                                    <td>${user.getStringStatus() }</td>
-                                    <td class="text-center">
-                                        <a href="${pageContext.request.contextPath}/user/showMoreById?id=${user.id}" class="btn bg-olive btn-xs">详情</a>
-                                        <a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole?id=${user.id}" class="btn bg-olive btn-xs">添加角色</a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                            <!--
-                        <tfoot>
-                        <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
-                        </tr>
-                        </tfoot>-->
-                        </table>
+                                    <div class="col-md-2 title">发送者：</div>
+                                    <div class="col-md-4 data">
+                                        <input type="text" class="form-control"
+                                               value="${email.user.username}" readonly="readonly">
+                                    </div>
+
+                                    <div class="col-md-2 title">标题：</div>
+                                    <div class="col-md-4 data">
+                                        <input type="text" class="form-control" name="title" readonly value=${email.title} >
+                                    </div>
+
+                                    <div class="col-md-2 title">内容</div>
+                                    <div class="col-md-10 data rowHeight2x">
+                                <textarea class="form-control" rows="3" name="content" readonly >
+                                    ${email.content}
+                                </textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 数据表格 /-->
                         <!--数据列表/-->
 
                     </div>
-                    <!-- 数据表格 /-->
 
                 </div>
-                <!-- /.box-body -->
 
-                <!-- .box-footer-->
-                <div class="box-footer">
-                    <div class="pull-left">
-                        <div class="form-group form-inline">
-                            总共${pageInfo.pages} 页，共${pageInfo.size} 条数据。 每页 <select class="form-control" id="changePageSize" onchange="changePageSize()">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select> 条
-                        </div>
-                    </div>
-
-                    <div class="box-tools pull-right">
-                        <ul class="pagination">
-                            <li>
-                                <a href="${pageContext.request.contextPath}/user/findAll?pageNum=1&pageSize=${pageInfo.pageSize}" aria-label="Previous">首页</a>
-                            </li>
-                            <li><a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}">上一页</a></li>
-                            <c:forEach begin="1" end="${pageInfo.pages}" var="pageNumber">
-
-                                <li><a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}">${pageNumber}</a></li>
-
-                            </c:forEach>
-
-                            <li><a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}">下一页</a></li>
-                            <li>
-                                <a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}" aria-label="Next">尾页</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-                <!-- /.box-footer-->
 
             </div>
-
-        </section>
-        <!-- 正文区域 /-->
+            <!-- /.box-footer-->
 
     </div>
-    <!-- @@close -->
-    <!-- 内容区域 /-->
 
-    <!-- 底部导航 -->
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 1.0.8
-        </div>
-        <strong>Copyright &copy; 2014-2017 <a
-                href="http://www.itcast.cn">研究院研发部</a>.
-        </strong> All rights reserved. </footer>
-    <!-- 底部导航 /-->
+    </section>
+    <!-- 正文区域 /-->
+
+</div>
+<!-- @@close -->
+<!-- 内容区域 /-->
+
+<!-- 底部导航 -->
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 1.0.8
+    </div>
+    <strong>Copyright &copy; 2014-2017 <a
+            href="http://www.itcast.cn">研究院研发部</a>.
+    </strong> All rights reserved. </footer>
+<!-- 底部导航 /-->
 
 </div>
 
@@ -303,18 +234,6 @@
         });
     });
 
-    function changePageSize() {
-        //获取下拉框的值
-        var pageSize = $("#changePageSize").val();
-
-        //向服务器发送请求，改变每页显示条数
-        location.href = "/user/findAll?pageNum=1&pageSize="
-            + pageSize;
-    }
-    $(function(){
-        $("#changePageSize").val(${pageInfo.pageSize});
-    });
-
     // 设置激活菜单
     function setSidebarActive(tagUri) {
         var liObj = $("#" + tagUri);
@@ -323,38 +242,6 @@
             liObj.addClass("active");
         }
     }
-    function search(){
-        //条件查询
-        var value = $("#keyValue").val();
-        var oValue = location.search.toString().split("keyValue=")[1];
-        if( value == oValue){
-            return;
-        }
-        location.href = '/user/findAll?pageNum='+1+
-                '&pageSize='+${pageInfo.pageSize}
-                +'&keyValue='+value;
-    }
-    function del(){
-        var idList = $("#dataList tr");
-        var checkList = document.getElementsByName("ids");
-        var ids = "";
-        for(var i = 1; i < idList.length; i++){
-            if( true == checkList[i-1].checked ){
-                ids += idList[i].children[1].textContent+",";
-            }
-        }
-        $.ajax({
-            url: "/user/deleteByIds",
-            type: "post",
-            data: {ids:ids},
-            success:function(data){
-                if(data > 0){
-                    refresh();
-                }
-            }
-        });
-    }
-
 
     $(document)
         .ready(

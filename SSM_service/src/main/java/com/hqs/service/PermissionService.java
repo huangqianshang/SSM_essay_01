@@ -16,4 +16,7 @@ public interface PermissionService {
 
     //查询资源权限总个数
     int findTotalPermission();
+
+    //删除资源权限
+    int deleteByIds(String ids);
 }

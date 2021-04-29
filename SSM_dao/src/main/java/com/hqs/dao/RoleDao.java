@@ -12,8 +12,8 @@ public interface RoleDao {
     })
     List < Role > findByUserId(String userId);
 
-    @Select ("select * from role")
-    List< Role> findAll();
+    @Select ("select * from role where roleDesc like #{keyValue}")
+    List< Role> findAll(String keyValue);
 
     @Insert ("insert into role values (#{id},#{roleName},#{roleDesc})")
     void save(Role role);
@@ -32,4 +32,7 @@ public interface RoleDao {
 
     @Select ("select count(*) from role")
     int findTotalRole();
+
+    @Delete("delete from role where id in (#{ids}) ")
+    int deleteByIds(String ids);
 }

@@ -27,7 +27,58 @@
                 radioClass : 'iradio_square-blue',
                 increaseArea : '20%' // optional
             });
+
+            var name = document.getElementById("username");
+            var pswd = document.getElementById("password");
+            var rember = document.getElementById("rember");
+            var dl = document.getElementById("dl");
+            //页面初始化时，如果帐号密码cookie存在则填充
+            if(getCookie('username')&& getCookie('password')){
+                name.value = getCookie('username');
+                pswd.value = getCookie('password');
+                rember.checked = true;
+                $('input').iCheck({
+                    checkboxClass : 'icheckbox_square-blue',
+                    radioClass : 'iradio_square-blue',
+                    increaseArea : '20%', // optional
+                    rember:'checked',
+                });
+
+            }
+            //表单提交事件触发时，如果复选框是勾选状态则保存cookie
+            dl.onsubmit =function(){
+                if(rember.checked){
+                    setCookie('username',name.value,7); //保存帐号到cookie，有效期7天
+                    setCookie('password',pswd.value,7); //保存密码到cookie，有效期7天
+                }else{
+                    delCookie('username');
+                    delCookie('password');
+                }
+            }
         });
+
+        //设置cookie
+        function setCookie(name,value,day){
+            var date = new Date();
+            date.setDate(date.getDate() + day);
+            document.cookie = name + '=' + value + ';expires='+ date;
+        };
+
+        //获取cookie
+        function getCookie(name){
+            var reg = RegExp(name+'=([^;]+)');
+            var arr = document.cookie.match(reg);
+            if(arr){
+                return arr[1];
+            }else{
+                return '';
+            }
+        };
+
+        //删除cookie
+        function delCookie(name){
+            setCookie(name,null,-1);
+        }
     </script>
 </head>
 
@@ -40,21 +91,21 @@
     <div class="login-box-body">
         <p class="login-box-msg">登录系统</p>
 
-        <form action="/login" method="post">
+        <form action="/login" method="post" id="dl">
             <div class="form-group has-feedback">
-                <input type="text" name="username" class="form-control"
+                <input type="text" name="username" class="form-control" id="username"
                        placeholder="用户名"> <span
                     class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" name="password" class="form-control"
+                <input type="password" name="password" class="form-control" id="password"
                        placeholder="密码"> <span
                     class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
-                        <label><input type="checkbox"> 记住 下次自动登录</label>
+                        <label><input type="checkbox" id="rember" > 记住 下次自动登录</label>
                     </div>
                 </div>
                 <!-- /.col -->
@@ -64,9 +115,6 @@
                 <!-- /.col -->
             </div>
         </form>
-
-        <a href="#">忘记密码</a><br>
-
 
     </div>
     <!-- /.login-box-body -->

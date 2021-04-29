@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserService extends UserDetailsService {
     //查询所有用户
-    List < UserInfo > findAll(int pageNum, int pageSize);
+    List < UserInfo > findAll(int pageNum, int pageSize,String keyValue);
 
     //保存新增的用户
     void save(UserInfo user);
@@ -26,4 +26,10 @@ public interface UserService extends UserDetailsService {
 
     //查找用户总数
     int findTotalUser();
+
+    //修改用户
+    void update(UserInfo user);
+
+    //删除用户
+    int deleteByIds(String ids);
 }

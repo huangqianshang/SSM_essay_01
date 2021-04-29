@@ -79,15 +79,15 @@
         <!-- 内容头部 -->
         <section class="content-header">
             <h1>
-                角色管理 <small>全部角色</small>
+                邮件管理 <small>发送邮件</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="${pageContext.request.contextPath}/index.jsp"><i
                         class="fa fa-dashboard"></i> 首页</a></li>
                 <li><a
-                        href="${pageContext.request.contextPath}/role/findAll.do">角色管理</a></li>
+                        href="${pageContext.request.contextPath}/email/findAll.do">邮件管理</a></li>
 
-                <li class="active">全部角色</li>
+                <li class="active">发送邮件</li>
             </ol>
         </section>
         <!-- 内容头部 /-->
@@ -119,7 +119,7 @@
 
 
                         <!--数据列表-->
-                        <form action="/email/sendEmail" method="post">
+                        <form action="/email/sendEmail" method="post" id="sendEmail">
                         <div class="panel panel-default">
                             <div class="panel-heading">邮件信息</div>
                             <div class="row data-type">
@@ -146,7 +146,7 @@
 
                                 <div class="col-md-2 title">内容(150字内)</div>
                                 <div class="col-md-10 data rowHeight2x">
-                                <textarea class="form-control" rows="3" name="content">
+                                <textarea class="form-control" rows="3" name="content" id="content" >
                                 </textarea>
                                 </div>
 
@@ -255,6 +255,16 @@
             liObj.addClass("active");
         }
     }
+
+    $(function(){
+        var sendEmail = document.getElementById("sendEmail");
+        sendEmail.onsubmit = function(){
+            if($("#content").val().length > 150){
+                alert("超出输入限度");
+                return false;
+            }
+        }
+    });
 
     $(document)
         .ready(

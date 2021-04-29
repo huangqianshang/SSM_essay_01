@@ -12,11 +12,17 @@ public interface EmailService {
     List< Email> findNewEmail(String userId);
 
     //通过id查询所有邮件
-    List< Email> findAll(String userId);
+    List< Email> findAll(String userId,int pageNum,int pageSize);
 
     //发送邮件
     void save(Email email) ;
 
     //标记已读
     void setRead(String emailId);
+
+    //查询所有邮件的数量
+    int findTotalEmail(String userId);
+
+    //邮件详情界面
+    Email findById(String id);
 }

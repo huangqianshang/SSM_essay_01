@@ -264,6 +264,19 @@
         });
     });
 
+    var flag = true;
+    $(function(){
+        setInterval("findNewEmailNum()",5000);
+        $("#newEmailNum").click(function () {
+            findNewEmail(flag);
+            var aria_expanded = $("#newEmailNum").attr("aria-expanded");
+            if (aria_expanded != undefined)
+                flag = aria_expanded == "true" ? true : false;
+            else
+                flag = false;
+
+        });
+    });
 
     // 设置激活菜单
     function setSidebarActive(tagUri) {
@@ -287,7 +300,6 @@
         language: 'zh-CN'
     });
 </script>
-<script src="${pageContext.request.contextPath}/plugins/js-my/email-compent.js"></script>
 </body>
 
 </html>

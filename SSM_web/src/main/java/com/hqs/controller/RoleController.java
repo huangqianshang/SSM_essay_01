@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -26,8 +27,8 @@ public class RoleController {
     private PermissionService permissionService;
 
     @RequestMapping("/findAll")
-    public String findAll(Model model,@RequestParam(defaultValue = "1") int pageNum,@RequestParam(defaultValue = "4") int pageSize){
-        List < Role > roleList = roleService.findAll(pageNum,pageSize);
+    public String findAll(Model model,@RequestParam(defaultValue = "1") int pageNum,@RequestParam(defaultValue = "4") int pageSize,@RequestParam(defaultValue = "")String keyValue){
+        List < Role > roleList = roleService.findAll(pageNum,pageSize,keyValue);
         PageInfo<Role> pageInfo = new PageInfo < Role > ();
         pageInfo.setList (roleList);
         pageInfo.setPageSize (pageSize);
@@ -36,6 +37,7 @@ public class RoleController {
         pageInfo.setSize (count);
         pageInfo.setPages (count%pageSize==0?count/pageSize:count/pageSize+1);
         model.addAttribute ("pageInfo",pageInfo);
+        model.addAttribute ("keyValue",keyValue);
         return "role-list";
     }
 
@@ -71,5 +73,11 @@ public class RoleController {
     public void addPermissionToRole(String roleId,HttpServletResponse response,String ids) throws IOException {
         roleService.addPermissionToRole(roleId,ids);
         response.sendRedirect ("findAll");
+    }
+
+    @ResponseBody
+    @RequestMapping("/deleteByIds")
+    public int deleteByIds(HttpServletResponse response,String ids) throws IOException {
+        return roleService.deleteByIds(ids);
     }
 }
