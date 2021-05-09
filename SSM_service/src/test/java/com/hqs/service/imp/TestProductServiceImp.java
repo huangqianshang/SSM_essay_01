@@ -16,15 +16,15 @@ public class TestProductServiceImp {
     public void first() {
         ac = new ClassPathXmlApplicationContext ("spring/applicationContext.xml");
     }
-
-    @Test
-    public void testProductServiceImp() {
-        ProductService productService = (ProductService) ac.getBean ("productService");
-        List < Product > products = productService.findAll (1,4);
-        for (Product p :
-                products) {
-            System.out.println (p);
-        }
-    }
+//
+//    @Test
+//    public void testProductServiceImp() {
+//        ProductService productService = (ProductService) ac.getBean ("productService");
+//        List < Product > products = productService.findAll (1,4);
+//        for (Product p :
+//                products) {
+//            System.out.println (p);
+//        }
+//    }
 
 }

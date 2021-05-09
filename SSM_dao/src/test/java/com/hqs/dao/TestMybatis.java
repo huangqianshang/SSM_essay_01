@@ -21,14 +21,14 @@ public class TestMybatis {
         dao = ac.getBean (ProductDao.class);
         userDao = ac.getBean (UserDao.class);
     }
-    @Test
-    public void findAll(){
-        List < Product > productList = dao.findAll ( );
-        for (Product product:
-             productList) {
-            System.out.println (product );
-        }
-    }
+//    @Test
+//    public void findAll(){
+//        List < Product > productList = dao.findAll ( );
+//        for (Product product:
+//             productList) {
+//            System.out.println (product );
+//        }
+//    }
     @Test
     public void insert(){
         Product product = new Product ();

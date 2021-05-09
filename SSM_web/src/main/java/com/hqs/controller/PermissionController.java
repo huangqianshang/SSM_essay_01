@@ -24,16 +24,17 @@ public class PermissionController {
     private PermissionService permissionService;
 
     @RequestMapping("/findAll")
-    public String findAll(Model model, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "4") int pageSize){
-        List < Permission > permissionList = permissionService.findAll(pageNum,pageSize);
+    public String findAll(Model model, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "4") int pageSize,@RequestParam(defaultValue = "") String keyValue){
+        List < Permission > permissionList = permissionService.findAll(pageNum,pageSize,keyValue);
         PageInfo < Permission > pageInfo = new PageInfo < Permission> ();
         pageInfo.setPageNum (pageNum);
         pageInfo.setPageSize (pageSize);
-        int count = permissionService.findTotalPermission();
+        int count = permissionService.findTotalPermission(keyValue);
         pageInfo.setSize (count);
         pageInfo.setList (permissionList);
         pageInfo.setPages (count%pageSize==0?count/pageSize:count/pageSize+1);
         model.addAttribute ("pageInfo",pageInfo);
+        model.addAttribute("keyValue",keyValue);
         return "permission-list";
     }
 

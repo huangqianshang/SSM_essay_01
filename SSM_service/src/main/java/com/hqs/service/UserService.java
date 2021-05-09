@@ -18,6 +18,9 @@ public interface UserService extends UserDetailsService {
     //给用户添加角色
     void addRole(String ids, String userId);
 
+    //给用户删除角色
+    void delRole(String ids, String userId);
+
     //查找用户名
     List< UserInfo> findOtherUsernameByUsername(String username);
 
@@ -32,4 +35,5 @@ public interface UserService extends UserDetailsService {
 
     //删除用户
     int deleteByIds(String ids);
+
 }

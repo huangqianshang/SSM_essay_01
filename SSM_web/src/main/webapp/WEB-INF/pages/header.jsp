@@ -233,7 +233,7 @@
     }
 
     function findNewEmail(flag){
-        findNewEmailNum();
+        // findNewEmailNum();
         if(flag) {
             $.ajax({
                 url: "/email/findNewEmail",

@@ -69,15 +69,23 @@ public class UserController {
         UserInfo user = userService.findById(id);
         user.setId (id);
         List< Role > roleList = roleService.findOtherRole(id);
+        List< Role > myRoleList = roleService.findAllRole(id);
         model.addAttribute ("user",user);
         model.addAttribute ("roleList",roleList);
+        model.addAttribute ("myRoleList",myRoleList);
         return "user-role-add";
     }
 
     @RequestMapping("/addRoleToUser")
     public void addRoleToUser(HttpServletResponse response,String ids,String userId) throws IOException {
         userService.addRole(ids,userId);
-        response.sendRedirect ("findAll");
+        response.sendRedirect ("findUserByIdAndAllRole?id="+userId);
+    }
+
+    @RequestMapping("/delRoleToUser")
+    public void delRoleToUser(HttpServletResponse response,String ids,String userId) throws IOException {
+        userService.delRole(ids,userId);
+        response.sendRedirect ("findUserByIdAndAllRole?id="+userId);
     }
 
     @RequestMapping("/update")

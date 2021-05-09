@@ -22,16 +22,17 @@ public class ProductController {
 
     //查询所有
     @RequestMapping("/findAll")
-    public String findAll(Model model, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "4") int pageSize) {
-        List < Product > products = productService.findAll (pageNum,pageSize);
+    public String findAll(Model model, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "4") int pageSize,@RequestParam(defaultValue = "") String keyValue) {
+        List < Product > products = productService.findAll (pageNum,pageSize,keyValue);
         PageInfo < Product > pageInfo = new PageInfo < Product> ();
         pageInfo.setPageSize (pageSize);
         pageInfo.setPageNum (pageNum);
         pageInfo.setList (products);
-        int count = productService.findTotalProduct();
+        int count = productService.findTotalProduct(keyValue);
         pageInfo.setSize (count);
         pageInfo.setPages (count%pageSize==0?count/pageSize:count/pageSize+1);
         model.addAttribute ("pageInfo",pageInfo);
+        model.addAttribute("keyValue",keyValue);
         return "product-list";
     }
 
@@ -58,5 +59,20 @@ public class ProductController {
     @RequestMapping("/updateProductStatus")
     public int updateProductStatus(String ids,int productStatus) throws IOException {
         return productService.updateProductStatus(ids,productStatus);
+    }
+
+    @RequestMapping("/show")
+    public String showMoreById(Model model,String id){
+        Product product = productService.findById(id);
+        model.addAttribute ("product",product);
+        model.addAttribute("id",id);
+        return "product-show";
+    }
+
+
+    @RequestMapping("/update")
+    public void update(HttpServletResponse response,Product product,String String_DepartureTime,String String_productStatus) throws IOException {
+        productService.update(product,String_DepartureTime,String_productStatus);
+        response.sendRedirect ("findAll");
     }
 }

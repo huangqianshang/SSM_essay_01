@@ -14,6 +14,9 @@ public interface RoleService {
     //通过UserId查询用户没有的权限
     List< Role> findOtherRole(String id);
 
+    //通过UserId查询用户拥有的权限
+    List<Role> findAllRole(String id);
+
     //通过roleId查找一个角色和他的资源权限
     Role findById(String id);
 
@@ -21,8 +24,9 @@ public interface RoleService {
     void addPermissionToRole(String roleId, String ids);
 
     //查询角色总个数
-    int findTotalRole();
+    int findTotalRole(String keyValue);
 
     //根据id删除角色
     int deleteByIds(String ids);
+
 }

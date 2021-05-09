@@ -33,7 +33,7 @@ public class RoleController {
         pageInfo.setList (roleList);
         pageInfo.setPageSize (pageSize);
         pageInfo.setPageNum (pageNum);
-        int count = roleService.findTotalRole();
+        int count = roleService.findTotalRole(keyValue);
         pageInfo.setSize (count);
         pageInfo.setPages (count%pageSize==0?count/pageSize:count/pageSize+1);
         model.addAttribute ("pageInfo",pageInfo);

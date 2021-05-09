@@ -29,6 +29,10 @@ public class RoleServiceImp implements RoleService {
         return roleDao.findOtherRole(id);
     }
 
+    public List<Role> findAllRole(String id){
+        return roleDao.findAllRole(id);
+    }
+
     public Role findById(String id) {
         return roleDao.findByRoleId (id);
     }
@@ -37,8 +41,8 @@ public class RoleServiceImp implements RoleService {
         roleDao.addPermissionToRole(roleId,ids);
     }
 
-    public int findTotalRole() {
-        return roleDao.findTotalRole();
+    public int findTotalRole(String keyValue) {
+        return roleDao.findTotalRole("%"+keyValue+"%");
     }
 
     public int deleteByIds(String ids){

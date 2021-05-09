@@ -21,6 +21,9 @@ public interface RoleDao {
     @Select ("select * from role where id not in(select roleId from users_role where userId = #{userId})")
     List< Role> findOtherRole(String userId);
 
+    @Select ("select * from role where id in(select roleId from users_role where userId = #{userId})")
+    List<Role> findAllRole(String id);
+
     @Select ("select * from role where id = #{id}")
     @Results({
             @Result(property = "permissions",column = "id",javaType = List.class,many = @Many(select = "com.hqs.dao.PermissionDao.findByRoleId"))
@@ -30,8 +33,8 @@ public interface RoleDao {
     @Insert ("insert into role_permission values (#{permissionId},#{roleId})")
     void addPermissionToRole(@Param ("roleId") String roleId,@Param ("permissionId") String ids);
 
-    @Select ("select count(*) from role")
-    int findTotalRole();
+    @Select ("select count(*) from role where roleDesc like #{keyValue}")
+    int findTotalRole(String keyValue);
 
     @Delete("delete from role where id in (#{ids}) ")
     int deleteByIds(String ids);

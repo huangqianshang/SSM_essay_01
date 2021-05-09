@@ -15,9 +15,9 @@ public class PermissionServiceImp implements PermissionService {
     @Autowired
     private PermissionDao permissionDao;
 
-    public List < Permission > findAll(int pageNum, int pageSize) {
+    public List < Permission > findAll(int pageNum, int pageSize,String keyValue) {
         PageHelper.startPage (pageNum,pageSize);
-        return permissionDao.findAll();
+        return permissionDao.findAll("%"+keyValue+"%");
     }
 
     public void save(Permission permission) {
@@ -29,8 +29,8 @@ public class PermissionServiceImp implements PermissionService {
         return permissionDao.findNotInByRoleId (id);
     }
 
-    public int findTotalPermission() {
-        return permissionDao.findTotalPermission();
+    public int findTotalPermission(String keyValue) {
+        return permissionDao.findTotalPermission("%"+keyValue+"%");
     }
 
     public int deleteByIds(String ids){

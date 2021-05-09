@@ -18,12 +18,12 @@ public class SysLogServiceImp implements SysLogService {
         sysLogDao.save(sysLog);
     }
 
-    public List < SysLog > findAll(int pageNum, int pageSize) {
+    public List < SysLog > findAll(int pageNum, int pageSize,String keyValue) {
         PageHelper.startPage (pageNum,pageSize);
-        return sysLogDao.findAll();
+        return sysLogDao.findAll("%"+keyValue+"%");
     }
 
-    public int findTotalLog() {
-        return sysLogDao.findTotalLog();
+    public int findTotalLog(String keyValue) {
+        return sysLogDao.findTotalLog("%"+keyValue+"%");
     }
 }

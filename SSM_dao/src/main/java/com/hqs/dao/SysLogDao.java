@@ -16,9 +16,9 @@ public interface SysLogDao {
             "#{method})")
     void save(SysLog sysLog);
 
-    @Select ("select * from syslog ORDER BY visitTime DESC")
-    List< SysLog> findAll();
+    @Select ("select * from syslog where visitTime like #{keyValue} or username like #{keyValue}  ORDER BY visitTime DESC")
+    List< SysLog> findAll(String keyValue);
 
-    @Select ("select count(*) from syslog")
-    int findTotalLog();
+    @Select ("select count(*) from syslog where visitTime like #{keyValue} or username like #{keyValue} ")
+    int findTotalLog(String keyValue);
 }

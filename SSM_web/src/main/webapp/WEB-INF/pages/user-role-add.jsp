@@ -106,7 +106,7 @@
 							<thead>
 								<tr>
 									<th class="" style="padding-right: 0px">
-									<input id="selall" 
+									<input id="selall"
 										type="checkbox" class="icheckbox_square-blue"></th>
 									<th class="sorting_asc">ID</th>
 									<th class="sorting">角色名称</th>
@@ -117,9 +117,9 @@
 								<c:forEach items="${roleList}" var="role">
 									<tr>
 										<td>
-										
+
 										<input name="ids" type="checkbox" value="${role.id}">
-										
+
 										</td>
 										<td>${role.id}</td>
 										<td>${role.roleName }</td>
@@ -130,6 +130,7 @@
 							</tbody>
 
 						</table>
+
 				<!--订单信息/--> <!--工具栏-->
 				<div class="box-tools text-center">
 					<button type="submit" class="btn bg-maroon">添加</button>
@@ -139,6 +140,58 @@
 				<!--工具栏/--> </section>
 				<!-- 正文区域 /-->
 			</form>
+            <section class="content-header">
+                <h1>
+                    <small>已有角色</small>
+                </h1>
+            </section>
+            <form
+                    action="${pageContext.request.contextPath}/user/delRoleToUser"
+                    method="post">
+                <!-- 正文区域 -->
+                <section class="content">
+
+                    <input type="hidden" name="userId" value="${user.id}">
+
+                    <table id="dataList1"
+                           class="table table-bordered table-striped table-hover dataTable">
+                        <thead>
+                        <tr>
+                            <th class="" style="padding-right: 0px">
+                                <input id="selall1"
+                                       type="checkbox" class="icheckbox_square-blue"></th>
+                            <th class="sorting_asc">ID</th>
+                            <th class="sorting">角色名称</th>
+                            <th class="sorting">角色描述</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${myRoleList}" var="role">
+                            <tr>
+                                <td>
+
+                                    <input name="ids" type="checkbox" value="${role.id}">
+
+                                </td>
+                                <td>${role.id}</td>
+                                <td>${role.roleName }</td>
+                                <td>${role.roleDesc}</td>
+
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+
+                    </table>
+
+                    <!--订单信息/--> <!--工具栏-->
+                    <div class="box-tools text-center">
+                        <button type="submit" class="btn bg-maroon">删除</button>
+                        <button type="button" class="btn bg-default"
+                                onclick="history.back(-1);">返回</button>
+                    </div>
+                    <!--工具栏/--> </section>
+                <!-- 正文区域 /-->
+            </form>
 		</div>
 		<!-- 内容区域 /-->
 
@@ -260,6 +313,15 @@
 				}
 				$(this).data("clicks", !clicks);
 			});
+            $("#selall1").click(function() {
+                var clicks = $(this).is(':checked');
+                if (!clicks) {
+                    $("#dataList1 td input[type='checkbox']").iCheck("uncheck");
+                } else {
+                    $("#dataList1 td input[type='checkbox']").iCheck("check");
+                }
+                $(this).data("clicks", !clicks);
+            });
 		});
 
 		// 设置激活菜单

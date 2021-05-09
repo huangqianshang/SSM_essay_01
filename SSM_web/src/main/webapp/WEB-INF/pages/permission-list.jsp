@@ -123,7 +123,7 @@
 							<div class="box-tools pull-right">
 								<div class="has-feedback">
 									<input type="text" class="form-control input-sm"
-										placeholder="搜索"> <span
+										placeholder="搜索" onblur="search()" onclick="search()" id="keyValue" value="${keyValue}"> <span
 										class="glyphicon glyphicon-search form-control-feedback"></span>
 								</div>
 							</div>
@@ -194,18 +194,18 @@
 						<div class="box-tools pull-right">
 							<ul class="pagination">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/permission/findAll?pageNum=1&pageSize=${pageInfo.pageSize}" aria-label="Previous">首页</a>
+                                    <a href="${pageContext.request.contextPath}/permission/findAll?pageNum=1&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Previous">首页</a>
                                 </li>
-                                <li><a href="${pageContext.request.contextPath}/permission/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}">上一页</a></li>
+                                <li><a href="${pageContext.request.contextPath}/permission/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">上一页</a></li>
                                 <c:forEach begin="1" end="${pageInfo.pages}" var="pageNumber">
 
-                                    <li><a href="${pageContext.request.contextPath}/permission/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}">${pageNumber}</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/permission/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">${pageNumber}</a></li>
 
                                 </c:forEach>
 
-                                <li><a href="${pageContext.request.contextPath}/permission/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}">下一页</a></li>
+                                <li><a href="${pageContext.request.contextPath}/permission/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">下一页</a></li>
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/permission/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}" aria-label="Next">尾页</a>
+                                    <a href="${pageContext.request.contextPath}/permission/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Next">尾页</a>
                                 </li>
 							</ul>
 						</div>
@@ -313,6 +313,18 @@
             $(function(){
                 $("#changePageSize").val(${pageInfo.pageSize});
             });
+
+            function search(){
+                //条件查询
+                var value = $("#keyValue").val();
+                var oValue = location.search.toString().split("keyValue=")[1];
+                if( value == oValue){
+                    return;
+                }
+                location.href = '/permission/findAll?pageNum='+1+
+                    '&pageSize='+${pageInfo.pageSize}
+                    +'&keyValue='+value;
+            }
 
             function del(){
                 var idList = $("#dataList tr");

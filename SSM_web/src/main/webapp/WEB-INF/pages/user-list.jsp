@@ -204,18 +204,18 @@
                     <div class="box-tools pull-right">
                         <ul class="pagination">
                             <li>
-                                <a href="${pageContext.request.contextPath}/user/findAll?pageNum=1&pageSize=${pageInfo.pageSize}" aria-label="Previous">首页</a>
+                                <a href="${pageContext.request.contextPath}/user/findAll?pageNum=1&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Previous">首页</a>
                             </li>
-                            <li><a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}">上一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">上一页</a></li>
                             <c:forEach begin="1" end="${pageInfo.pages}" var="pageNumber">
 
-                                <li><a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}">${pageNumber}</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">${pageNumber}</a></li>
 
                             </c:forEach>
 
-                            <li><a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}">下一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">下一页</a></li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}" aria-label="Next">尾页</a>
+                                <a href="${pageContext.request.contextPath}/user/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Next">尾页</a>
                             </li>
                         </ul>
                     </div>

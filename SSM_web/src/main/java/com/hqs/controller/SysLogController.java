@@ -20,16 +20,17 @@ public class SysLogController {
     private SysLogService sysLogService;
 
     @RequestMapping("/findAll")
-    public String findAll(Model model, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "10") int pageSize){
-        List < SysLog > sysLogs =  sysLogService.findAll(pageNum,pageSize);
+    public String findAll(Model model, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "10") int pageSize,@RequestParam(defaultValue = "")String keyValue){
+        List < SysLog > sysLogs =  sysLogService.findAll(pageNum,pageSize,keyValue);
         PageInfo<SysLog> pageInfo = new PageInfo < SysLog > ();
         pageInfo.setPageNum (pageNum);
         pageInfo.setPageSize (pageSize);
         pageInfo.setList (sysLogs);
-        int count = sysLogService.findTotalLog();
+        int count = sysLogService.findTotalLog(keyValue);
         pageInfo.setSize (count);
         pageInfo.setPages (count%pageSize==0?count/pageSize:count/pageSize+1);
         model.addAttribute ("pageInfo",pageInfo);
+        model.addAttribute("keyValue",keyValue);
         return "syslog-list";
     }
 }
