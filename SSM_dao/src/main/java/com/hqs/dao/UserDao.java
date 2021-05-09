@@ -27,7 +27,7 @@ public interface UserDao {
     @Insert ("insert into users_role values (#{userId},#{roleId})")
     void addRole(@Param ("roleId") String ids,@Param ("userId") String userId);
 
-    @Delete("delete from users_role where userId = #{userId} and roleId in (#{roleId})")
+    @Delete("delete from users_role where userId = #{userId} and roleId = #{roleId}")
     void delRole(@Param ("roleId") String ids,@Param ("userId") String userId);
 
     @Select ("select username from users where username != #{username}")

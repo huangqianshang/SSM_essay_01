@@ -223,7 +223,7 @@
                         <div class="box-tools pull-right">
                             <div class="has-feedback">
                                 <input type="text" class="form-control input-sm"
-                                       placeholder="搜索"> <span
+                                       placeholder="搜索" onblur="search()" onclick="search()" id="keyValue" value="${keyValue}"> <span
                                     class="glyphicon glyphicon-search form-control-feedback"></span>
                             </div>
                         </div>
@@ -260,9 +260,9 @@
                                     <td>${orders.getFormatOrderTime() }</td>
                                     <td class="text-center">${orders.getStringOrderStatus() }</td>
                                     <td class="text-center">
-                                        <button type="button" class="btn bg-olive btn-xs">订单</button>
+<%--                                        <button type="button" class="btn bg-olive btn-xs">订单</button>--%>
                                         <button type="button" class="btn bg-olive btn-xs" onclick="location.href='/order/showMoreById?id=${orders.id}'">详情</button>
-                                        <button type="button" class="btn bg-olive btn-xs">编辑</button>
+<%--                                        <button type="button" class="btn bg-olive btn-xs">编辑</button>--%>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -336,18 +336,18 @@
                     <div class="box-tools pull-right">
                         <ul class="pagination">
                             <li>
-                                <a href="${pageContext.request.contextPath}/order/findAll?pageNum=1&pageSize=${pageInfo.pageSize}" aria-label="Previous">首页</a>
+                                <a href="${pageContext.request.contextPath}/order/findAll?pageNum=1&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Previous">首页</a>
                             </li>
-                            <li><a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}">上一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">上一页</a></li>
                             <c:forEach begin="1" end="${pageInfo.pages}" var="pageNumber">
 
-                            <li><a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}">${pageNumber}</a></li>
+                            <li><a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">${pageNumber}</a></li>
 
                             </c:forEach>
 
-                            <li><a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}">下一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">下一页</a></li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}" aria-label="Next">尾页</a>
+                                <a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Next">尾页</a>
                             </li>
                         </ul>
                     </div>
@@ -480,6 +480,17 @@
     $(function () {
         $("#changePageSize").val(${pageInfo.pageSize});
     });
+    function search(){
+        //条件查询
+        var value = $("#keyValue").val();
+        var oValue = location.search.toString().split("keyValue=")[1];
+        if( value == oValue){
+            return;
+        }
+        location.href = '/order/findAll?pageNum='+1+
+            '&pageSize='+${pageInfo.pageSize}
+            +'&keyValue='+value;
+    }
 
     $(document).ready(function() {
         // 选择框

@@ -38,7 +38,19 @@ public class RoleServiceImp implements RoleService {
     }
 
     public void addPermissionToRole(String roleId, String ids) {
-        roleDao.addPermissionToRole(roleId,ids);
+        String[] idList = ids.split(",");
+        for(String id:
+                idList){
+            roleDao.addPermissionToRole(roleId,id);
+        }
+    }
+
+    public void delPermissionToRole(String roleId, String ids){
+        String[] idList = ids.split(",");
+        for(String id:
+                idList){
+            roleDao.delPermissionToRole(roleId,id);
+        }
     }
 
     public int findTotalRole(String keyValue) {

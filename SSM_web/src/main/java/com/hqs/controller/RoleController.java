@@ -64,15 +64,23 @@ public class RoleController {
         Role role = roleService.findById(id);
         role.setId (id);
         List< Permission > permissionList = permissionService.findByRoleId (id);
+        List< Permission > myPermissionList = permissionService.findMyByRoleId (id);
         model.addAttribute ("role",role);
         model.addAttribute ("permissionList",permissionList);
+        model.addAttribute ("myPermissionList",myPermissionList);
         return "role-permission-add";
     }
 
     @RequestMapping("/addPermissionToRole")
     public void addPermissionToRole(String roleId,HttpServletResponse response,String ids) throws IOException {
         roleService.addPermissionToRole(roleId,ids);
-        response.sendRedirect ("findAll");
+        response.sendRedirect ("findRoleByIdAndAllPermission?id="+roleId);
+    }
+
+    @RequestMapping("/delPermissionToRole")
+    public void delPermissionToRole(String roleId,HttpServletResponse response,String ids) throws IOException {
+        roleService.delPermissionToRole(roleId,ids);
+        response.sendRedirect ("findRoleByIdAndAllPermission?id="+roleId);
     }
 
     @ResponseBody

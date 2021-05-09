@@ -68,7 +68,11 @@ public class UserServiceImp implements UserService {
     }
 
     public void delRole(String ids, String userId){
-        userDao.delRole(ids,userId);
+        String[] idList = ids.split(",");
+        for(String id:
+                idList){
+            userDao.delRole(id,userId);
+        }
     }
 
     public List < UserInfo > findOtherUsernameByUsername(String username) {

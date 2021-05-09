@@ -29,6 +29,10 @@ public class PermissionServiceImp implements PermissionService {
         return permissionDao.findNotInByRoleId (id);
     }
 
+    public List<Permission> findMyByRoleId(String id){
+        return permissionDao.findInByRoleId (id);
+    }
+
     public int findTotalPermission(String keyValue) {
         return permissionDao.findTotalPermission("%"+keyValue+"%");
     }

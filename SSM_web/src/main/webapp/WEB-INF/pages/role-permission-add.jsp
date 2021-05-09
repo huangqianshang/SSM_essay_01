@@ -132,13 +132,64 @@
 						</table>
 				<!--订单信息/--> <!--工具栏-->
 				<div class="box-tools text-center">
-					<button type="submit" class="btn bg-maroon">保存</button>
+					<button type="submit" class="btn bg-maroon">添加</button>
 					<button type="button" class="btn bg-default"
-						onclick="history.back(-1);">返回</button>
+						onclick="location.href='/role/findAll'">返回</button>
 				</div>
 				<!--工具栏/--> </section>
 				<!-- 正文区域 /-->
 			</form>
+            <section class="content-header">
+                <h1>
+                    <small>已添加资源路径</small>
+                </h1>
+            </section>
+            <form
+                    action="${pageContext.request.contextPath}/role/delPermissionToRole"
+                    method="post">
+                <!-- 正文区域 -->
+                <section class="content">
+
+                    <input type="hidden" name="roleId" value="${role.id}">
+
+                    <table id="dataList1"
+                           class="table table-bordered table-striped table-hover dataTable">
+                        <thead>
+                        <tr>
+                            <th class="" style="padding-right: 0px">
+                                <input id="selall1"
+                                       type="checkbox" class="icheckbox_square-blue"></th>
+                            <th class="sorting_asc">ID</th>
+                            <th class="sorting">权限名称</th>
+                            <th class="sorting">权限URL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${myPermissionList}" var="permission">
+                            <tr>
+                                <td>
+
+                                    <input name="ids" type="checkbox" value="${permission.id}">
+
+                                </td>
+                                <td>${permission.id}</td>
+                                <td>${permission.permissionName }</td>
+                                <td>${permission.url}</td>
+
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+
+                    </table>
+                    <!--订单信息/--> <!--工具栏-->
+                    <div class="box-tools text-center">
+                        <button type="submit" class="btn bg-maroon">删除</button>
+                        <button type="button" class="btn bg-default"
+                                onclick="location.href='/role/findAll'">返回</button>
+                    </div>
+                    <!--工具栏/--> </section>
+                <!-- 正文区域 /-->
+            </form>
 		</div>
 		<!-- 内容区域 /-->
 
@@ -260,6 +311,15 @@
 				}
 				$(this).data("clicks", !clicks);
 			});
+            $("#selall1").click(function() {
+                var clicks = $(this).is(':checked');
+                if (!clicks) {
+                    $("#dataList1 td input[type='checkbox']").iCheck("uncheck");
+                } else {
+                    $("#dataList1 td input[type='checkbox']").iCheck("check");
+                }
+                $(this).data("clicks", !clicks);
+            });
 		});
 
 		// 设置激活菜单

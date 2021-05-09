@@ -8,14 +8,14 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 public interface OrderDao {
-    @Select ("select * from orders")
+    @Select ("select * from orders where orderNum like #{keyValue} or orderTime like #{keyValue}")
     @Results({
             @Result(property = "product",column = "productId",javaType = Product.class,one = @One(select = "com.hqs.dao.ProductDao.findById"))
     })
-    List < Orders > findAll();
+    List < Orders > findAll(String keyValue);
 
-    @Select ("select count(*) from orders")
-    int findDataCount();
+    @Select ("select count(*) from orders where orderNum like #{keyValue} or orderTime like #{keyValue}")
+    int findDataCount(String keyValue);
 
     @Select ("select * from orders where id = #{id}")
     @Results({

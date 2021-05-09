@@ -23,6 +23,9 @@ public interface RoleService {
     //给角色添加资源权限
     void addPermissionToRole(String roleId, String ids);
 
+    //给角色删除资源权限
+    void delPermissionToRole(String roleId, String ids);
+
     //查询角色总个数
     int findTotalRole(String keyValue);
 

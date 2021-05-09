@@ -20,6 +20,9 @@ public interface PermissionDao {
     @Select ("select * from permission where id not in (select permissionId from role_permission where roleId = #{roleId})")
     List< Permission> findNotInByRoleId(String id);
 
+    @Select ("select * from permission where id in (select permissionId from role_permission where roleId = #{roleId})")
+    List<Permission> findInByRoleId(String id);
+
     @Select ("select count(*) from permission where permissionName like #{keyValue}")
     int findTotalPermission(String keyValue);
 

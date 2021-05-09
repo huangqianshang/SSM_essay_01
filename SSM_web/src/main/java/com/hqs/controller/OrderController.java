@@ -18,8 +18,8 @@ public class OrderController {
     private OrderService orderService;
 
     @RequestMapping("/findAll")
-    public String findAll(Model model, @RequestParam(defaultValue = "1") int pageNum,@RequestParam(defaultValue = "4") int pageSize){
-        List < Orders > orders = orderService.findAll (pageNum,pageSize );
+    public String findAll(Model model, @RequestParam(defaultValue = "1") int pageNum,@RequestParam(defaultValue = "4") int pageSize, @RequestParam(defaultValue = "")String keyValue){
+        List < Orders > orders = orderService.findAll (pageNum,pageSize,keyValue );
         PageInfo<Orders> pageInfo = new PageInfo < Orders > ();
         pageInfo.setList (orders);
         //当前页数
@@ -27,12 +27,13 @@ public class OrderController {
         //当前每页个数
         pageInfo.setPageSize (pageSize);
         //数据总条数
-        int count = orderService.findDataCount ( );
+        int count = orderService.findDataCount (keyValue);
         pageInfo.setSize (count);
         //总页数
         pageInfo.setPages (count%pageSize==0?count/pageSize:count/pageSize+1);
 
         model.addAttribute ("pageInfo",pageInfo);
+        model.addAttribute ("keyValue",keyValue);
         return "order-list";
     }
 

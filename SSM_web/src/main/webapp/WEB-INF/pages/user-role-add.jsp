@@ -135,7 +135,7 @@
 				<div class="box-tools text-center">
 					<button type="submit" class="btn bg-maroon">添加</button>
 					<button type="button" class="btn bg-default"
-						onclick="history.back(-1);">返回</button>
+                            onclick="location.href='/user/findAll'">返回</button>
 				</div>
 				<!--工具栏/--> </section>
 				<!-- 正文区域 /-->
@@ -187,7 +187,7 @@
                     <div class="box-tools text-center">
                         <button type="submit" class="btn bg-maroon">删除</button>
                         <button type="button" class="btn bg-default"
-                                onclick="history.back(-1);">返回</button>
+                                onclick="location.href='/user/findAll'">返回</button>
                     </div>
                     <!--工具栏/--> </section>
                 <!-- 正文区域 /-->

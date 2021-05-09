@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface OrderService {
     //分页查询所有orders
-    List < Orders > findAll(int pageNum,int pageSize);
+    List < Orders > findAll(int pageNum,int pageSize,String keyValue);
 
     //查询数据总条数
-    int findDataCount();
+    int findDataCount(String keyValue);
 
     //通过id查询订单详情
     Orders findById(String id);

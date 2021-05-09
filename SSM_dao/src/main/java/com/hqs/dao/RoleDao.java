@@ -33,6 +33,9 @@ public interface RoleDao {
     @Insert ("insert into role_permission values (#{permissionId},#{roleId})")
     void addPermissionToRole(@Param ("roleId") String roleId,@Param ("permissionId") String ids);
 
+    @Delete("delete from role_permission where roleId = #{roleId} and permissionId = #{permissionId}")
+    void delPermissionToRole(@Param ("roleId") String roleId,@Param ("permissionId") String ids);
+
     @Select ("select count(*) from role where roleDesc like #{keyValue}")
     int findTotalRole(String keyValue);
 

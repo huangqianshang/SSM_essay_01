@@ -14,14 +14,14 @@ public class OrderServiceImp implements OrderService {
     @Autowired
     private OrderDao orderDao;
 
-    public List < Orders > findAll(int pageNum,int pageSize) {
+    public List < Orders > findAll(int pageNum,int pageSize,String keyValue) {
         //完成分页
         PageHelper.startPage ( pageNum, pageSize);
-        return orderDao.findAll ();
+        return orderDao.findAll ("%"+keyValue+"%");
     }
 
-    public int findDataCount() {
-        return orderDao.findDataCount ();
+    public int findDataCount(String keyValue) {
+        return orderDao.findDataCount ("%"+keyValue+"%");
     }
 
     public Orders findById(String id) {
