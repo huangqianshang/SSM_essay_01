@@ -144,7 +144,11 @@
 									</tr>
 								</thead>
 								<tbody>
-
+                                <c:if test="${0==pageInfo.size}">
+                                    <tr>
+                                        <td colspan="5" style="text-align: center;font-weight: bold;font-size: 18px">暂无数据...</td>
+                                    </tr>
+                                </c:if>
 									<c:forEach items="${pageInfo.list}" var="role">
 										<tr>
 											<td><input name="ids" type="checkbox"></td>
@@ -318,6 +322,8 @@
             }
 
             function del(){
+                var choose = confirm("确定要删除吗？");
+                if(!choose){return;}
                 var idList = $("#dataList tr");
                 var checkList = document.getElementsByName("ids");
                 var ids = "";

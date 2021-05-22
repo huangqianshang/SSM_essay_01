@@ -233,7 +233,6 @@
     }
 
     function findNewEmail(flag){
-        // findNewEmailNum();
         if(flag) {
             $.ajax({
                 url: "/email/findNewEmail",
@@ -242,13 +241,6 @@
                     if (data.length == 0 || data == null) {
                             $("#showEmail").append("<li style='text-align: center;'>没有新的消息</li>");
                     } else {
-                        // console.log(data);
-                        // console.log(data[0].sendTime);
-                        //精确到秒
-                        // console.log(Date.parse(new Date()));
-                        //精确到毫秒
-                        // console.log(new Date().valueOf());
-                        // console.log(new Date().getTime());
                         for (var i = 0; i < data.length; i++) {
                             var t = new Date().valueOf() - data[i].sendTime;
                             //秒数

@@ -13,4 +13,10 @@ public interface OrderService {
 
     //通过id查询订单详情
     Orders findById(String id);
+
+    //查询对应产品号的订单
+    List<Orders> findByProductId(String id, int pageNum, int pageSize, String keyValue);
+
+    //查询对应产品号的订单总数
+    int findTotalByProductId(String id, String keyValue);
 }

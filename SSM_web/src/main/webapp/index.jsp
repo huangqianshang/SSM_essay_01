@@ -207,7 +207,7 @@
 
     var flag = true;
     $(function(){
-
+        console.log("1231232");
         setInterval("findNewEmailNum()",5000);
         $("#newEmailNum").click(function () {
             findNewEmail(flag);

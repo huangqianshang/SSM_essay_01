@@ -27,4 +27,13 @@ public class OrderServiceImp implements OrderService {
     public Orders findById(String id) {
         return orderDao.findById(id);
     }
+
+    public List<Orders> findByProductId(String id, int pageNum, int pageSize, String keyValue){
+        PageHelper.startPage ( pageNum, pageSize);
+        return orderDao.findByProductId (id,"%"+keyValue+"%");
+    }
+
+    public int findTotalByProductId(String id, String keyValue){
+        return orderDao.findTotalByProductId (id,"%"+keyValue+"%");
+    }
 }

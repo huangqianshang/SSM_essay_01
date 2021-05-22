@@ -36,7 +36,7 @@ public class UserController {
         //当前每页个数
         pageInfo.setPageSize (pageSize);
         //数据总条数
-        int count = userService.findTotalUser();
+        int count = userService.findTotalUser(keyValue);
         pageInfo.setSize (count);
         //总页数
         pageInfo.setPages (count%pageSize==0?count/pageSize:count/pageSize+1);

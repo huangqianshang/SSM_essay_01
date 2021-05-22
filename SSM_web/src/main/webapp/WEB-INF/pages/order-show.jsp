@@ -181,17 +181,18 @@
                     <c:forEach var="traveller" items="${orders.travellers}">
 
                         <tr>
-                            <td>${traveller.getStringTravellerType()}</td>
+                            <td><input type="text" size="10" value="${traveller.getStringTravellerType()}"
+                                       class="form-control"   readonly="readonly"></td>
                             <td><input type="text" size="10" value="${traveller.name }"
-                                       readonly="readonly"></td>
+                                       class="form-control"   readonly="readonly"></td>
                             <td><input type="text" size="10" value="${traveller.sex }"
-                                       readonly="readonly"></td>
+                                       class="form-control"  readonly="readonly"></td>
                             <td><input type="text" size="20"
-                                       value="${traveller.phoneNum }" readonly="readonly"></td>
+                                       class="form-control"  value="${traveller.phoneNum }" readonly="readonly"></td>
                             <td><input type="text" size="15"
-                                       value="${traveller.getStringCredentialsType()}" readonly="readonly"></td>
+                                       class="form-control" value="${traveller.getStringCredentialsType()}" readonly="readonly"></td>
                             <td><input type="text" size="28"
-                                       value="${traveller.credentialsNum }" readonly="readonly"></td>
+                                       class="form-control" value="${traveller.credentialsNum }" readonly="readonly"></td>
                         </tr>
                     </c:forEach>
 

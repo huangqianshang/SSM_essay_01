@@ -28,7 +28,7 @@ public interface UserService extends UserDetailsService {
     String findIdByUsername(String receiveName);
 
     //查找用户总数
-    int findTotalUser();
+    int findTotalUser(String keyValue);
 
     //修改用户
     void update(UserInfo user);

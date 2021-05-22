@@ -38,47 +38,19 @@ public class LogAop {
         date = new Date();
         //获取方法名
         clazz = jp.getTarget ( ).getClass ( );
-//        String methodName = jp.getSignature ( ).getName ( );
-        //获取的参数错误导致反射失败
-//        Object[] args = jp.getArgs ( );
-//        if (args == null || args.length == 0) {
-//            method = clazz.getMethod (methodName);
-//        } else {
-//            Class[] classArg = new Class[args.length];
-//            for (int i = 0; i < args.length; i++) {
-//                classArg[i] = args[i].getClass ( );
-//            }
-//            method = clazz.getMethod (methodName,classArg);
-//        }
         MethodSignature methodSignature = (MethodSignature) jp.getSignature ();
         method = methodSignature.getMethod ();
 
     }
-
-//    @Test
-//    private void c() throws NoSuchMethodException {
-//        clazz = ProductController.class;
-//        String methodName = "findAll";
-//
-//        Object[] args = {Model.class};
-//
-//            Class[] classArg = new Class[args.length];
-//            for (int i = 0; i < args.length; i++) {
-//                classArg[i] = (Class) args[i];
-//            }
-//            method = clazz.getMethod (methodName,classArg);
-//        System.out.println (method );
-//    }
 
     @After("execution(* com.hqs.controller.*.*(..))")
     public void doAfter(){
         //获取访问时长
         Long executionTime = System.currentTimeMillis() - date.getTime();
         //获取url
-//        String classname = clazz.getName ();
         String requestURI = request.getRequestURI();
         String url = requestURI.split("\\?")[0];
-        if(!url.contains("/sysLog") && !url.contains("/email") && !url.contains("/find") ){
+        if(!url.contains("/sysLog") && !url.contains("/email") && !url.contains("/find") && !url.contains("/show")  ){
             SysLog sysLog = new SysLog();
             sysLog.setId(GetUUID.get());
             sysLog.setVisitTime(date);
@@ -92,32 +64,6 @@ public class LogAop {
             //写入数据库
             sysLogService.save(sysLog);
         }
-
-//        if (!classname.equals (SysLogController.class.getName ()) && !classname.equals (EmailController.class.getName ())) {
-//            //类名上的RequestMapping
-//            RequestMapping clazzAnnotation = (RequestMapping) clazz.getAnnotation (RequestMapping.class);
-//            if (clazzAnnotation != null) {
-//                //方法上的RequestMapping
-//                RequestMapping methodAnnotation = method.getAnnotation (RequestMapping.class);
-//                if (methodAnnotation != null) {
-//                    //拼接url
-//                    String url = clazzAnnotation.value ( )[0] + methodAnnotation.value ( )[0];
-//                    //给SysLog对象的属性赋值
-//                    SysLog sysLog = new SysLog ( );
-//                    sysLog.setId (GetUUID.get ( ));
-//                    sysLog.setVisitTime (date);
-//                    SecurityContext context = SecurityContextHolder.getContext ( );
-//                    User user = (User) context.getAuthentication ( ).getPrincipal ( );
-//                    sysLog.setUsername (user.getUsername ( ));
-//                    sysLog.setIp (request.getRemoteAddr ( ));
-//                    sysLog.setUrl (url);
-//                    sysLog.setExecutionTime (executionTime);
-//                    sysLog.setMethod (clazz.getName ( ) + method.getName ( ));
-//                    //写入数据库
-//                    sysLogService.save (sysLog);
-//                }
-//            }
-//        }
 
     }
 

@@ -213,6 +213,11 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <c:if test="${0==pageInfo.size}">
+                                <tr>
+                                    <td colspan="10" style="text-align: center;font-weight: bold;font-size: 18px">暂无数据...</td>
+                                </tr>
+                            </c:if>
                             <c:forEach items="${pageInfo.list}" var="product">
                                 <tr>
                                     <td><input name="ids" type="checkbox"></td>
@@ -225,7 +230,7 @@
                                     <td>${product.productDesc}</td>
                                     <td>${product.getShowProductStatus()}</td>
                                     <td class="text-center">
-                                        <a class="btn bg-olive btn-xs">订单</a>
+                                        <a class="btn bg-olive btn-xs" href="${pageContext.request.contextPath}/product/showOrderByProductId?id=${product.id}">订单</a>
                                         <a class="btn bg-olive btn-xs" href="${pageContext.request.contextPath}/product/show?id=${product.id}" >编辑</a>
                                     </td>
                                 </tr>
@@ -389,6 +394,8 @@
     });
 
     function del(){
+        var choose = confirm("确定要删除吗？");
+        if(!choose){return;}
         var idList = $("#dataList tr");
         var checkList = document.getElementsByName("ids");
         var ids = "";
@@ -400,9 +407,9 @@
         $.ajax({
             url: "/product/deleteByIds",
             type: "post",
-            data: {ids:ids},
-            success:function(data){
-                if(data > 0){
+            data: {ids: ids},
+            success: function (data) {
+                if (data > 0) {
                     refresh();
                 }
             }

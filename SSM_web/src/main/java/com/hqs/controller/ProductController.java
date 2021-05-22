@@ -1,7 +1,9 @@
 package com.hqs.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.hqs.domain.Orders;
 import com.hqs.domain.Product;
+import com.hqs.service.OrderService;
 import com.hqs.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,8 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService productService;
+    @Autowired
+    private OrderService orderService;
 
     //查询所有
     @RequestMapping("/findAll")
@@ -69,10 +73,25 @@ public class ProductController {
         return "product-show";
     }
 
-
     @RequestMapping("/update")
     public void update(HttpServletResponse response,Product product,String String_DepartureTime,String String_productStatus) throws IOException {
         productService.update(product,String_DepartureTime,String_productStatus);
         response.sendRedirect ("findAll");
+    }
+
+    @RequestMapping("/showOrderByProductId")
+    public String showOrderByProductId(Model model, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "4") int pageSize,@RequestParam(defaultValue = "") String keyValue,String id) {
+        List <Orders> orders = orderService.findByProductId (id,pageNum,pageSize,keyValue);
+        PageInfo < Orders > pageInfo = new PageInfo < Orders> ();
+        pageInfo.setPageSize (pageSize);
+        pageInfo.setPageNum (pageNum);
+        pageInfo.setList (orders);
+        int count = orderService.findTotalByProductId(id,keyValue);
+        pageInfo.setSize (count);
+        pageInfo.setPages (count%pageSize==0?count/pageSize:count/pageSize+1);
+        model.addAttribute ("pageInfo",pageInfo);
+        model.addAttribute("keyValue",keyValue);
+        model.addAttribute("id",id);
+        return "product-show-order";
     }
 }

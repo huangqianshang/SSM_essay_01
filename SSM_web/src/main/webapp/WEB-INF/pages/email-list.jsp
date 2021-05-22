@@ -145,7 +145,11 @@
                             </tr>
                             </thead>
                             <tbody>
-
+                            <c:if test="${0==pageInfo.size}">
+                                <tr>
+                                    <td colspan="6" style="text-align: center;font-weight: bold;font-size: 18px">暂无数据...</td>
+                                </tr>
+                            </c:if>
                             <c:forEach items="${pageInfo.list}" var="email">
                                 <tr>
                                     <td><input name="ids" type="checkbox"></td>

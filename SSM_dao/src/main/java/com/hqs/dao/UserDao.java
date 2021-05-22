@@ -36,8 +36,8 @@ public interface UserDao {
     @Select ("select id from users where username = #{userName}")
     String findIdByUsername(String userName);
 
-    @Select("select count(*) from users")
-    int findTotalUser();
+    @Select("select count(*) from users where username like #{keyValue}")
+    int findTotalUser(String keyValue);
 
     @Update("update users set email=#{email},username=#{username},password=#{password},phoneNum=#{phoneNum},status=#{status} where id = #{id}")
     void update(UserInfo user);

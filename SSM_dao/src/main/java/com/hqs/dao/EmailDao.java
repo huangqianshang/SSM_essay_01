@@ -15,7 +15,7 @@ public interface EmailDao {
     @Select ("select * from email where receiveId = #{receiveId} and readStatus = 0")
     List< Email> findNewEmail(String receiveId);
 
-    @Select ("select * from email where receiveId = #{receiveId}")
+    @Select ("select * from email where receiveId = #{receiveId} ORDER BY sendTime DESC")
     @Results({
             @Result(property = "user",column = "sendId",javaType = UserInfo.class,one = @One(select = "com.hqs.dao.UserDao.findById"))
     })

@@ -173,7 +173,7 @@
         <!-- 内容头部 -->
         <section class="content-header">
             <h1>
-                数据管理 <small>全部订单</small>
+                数据管理 <small>订单</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
@@ -201,19 +201,19 @@
                         <div class="pull-left">
                             <div class="form-group form-inline">
                                 <div class="btn-group">
-<%--                                    <button type="button" class="btn btn-default" title="新建"--%>
-<%--                                            onclick="location.href='/product/linkToAdd'">--%>
-<%--                                        <i class="fa fa-file-o"></i> 新建--%>
-<%--                                    </button>--%>
-<%--                                    <button type="button" class="btn btn-default" title="删除">--%>
-<%--                                        <i class="fa fa-trash-o"></i> 删除--%>
-<%--                                    </button>--%>
-<%--                                    <button type="button" class="btn btn-default" title="开启">--%>
-<%--                                        <i class="fa fa-check"></i> 开启--%>
-<%--                                    </button>--%>
-<%--                                    <button type="button" class="btn btn-default" title="屏蔽">--%>
-<%--                                        <i class="fa fa-ban"></i> 屏蔽--%>
-<%--                                    </button>--%>
+                                    <%--                                    <button type="button" class="btn btn-default" title="新建"--%>
+                                    <%--                                            onclick="location.href='/product/linkToAdd'">--%>
+                                    <%--                                        <i class="fa fa-file-o"></i> 新建--%>
+                                    <%--                                    </button>--%>
+                                    <%--                                    <button type="button" class="btn btn-default" title="删除">--%>
+                                    <%--                                        <i class="fa fa-trash-o"></i> 删除--%>
+                                    <%--                                    </button>--%>
+                                    <%--                                    <button type="button" class="btn btn-default" title="开启">--%>
+                                    <%--                                        <i class="fa fa-check"></i> 开启--%>
+                                    <%--                                    </button>--%>
+                                    <%--                                    <button type="button" class="btn btn-default" title="屏蔽">--%>
+                                    <%--                                        <i class="fa fa-ban"></i> 屏蔽--%>
+                                    <%--                                    </button>--%>
                                     <button type="button" class="btn btn-default" title="刷新">
                                         <i class="fa fa-refresh"></i> 刷新
                                     </button>
@@ -248,11 +248,7 @@
                             </thead>
                             <tbody>
 
-                            <c:if test="${0==pageInfo.size}">
-                                <tr>
-                                    <td colspan="8" style="text-align: center;font-weight: bold;font-size: 18px">暂无数据...</td>
-                                </tr>
-                            </c:if>
+
                             <c:forEach items="${pageInfo.list}" var="orders">
 
                                 <tr>
@@ -264,9 +260,7 @@
                                     <td>${orders.getFormatOrderTime() }</td>
                                     <td class="text-center">${orders.getStringOrderStatus() }</td>
                                     <td class="text-center">
-<%--                                        <button type="button" class="btn bg-olive btn-xs">订单</button>--%>
                                         <button type="button" class="btn bg-olive btn-xs" onclick="location.href='/order/showMoreById?id=${orders.id}'">详情</button>
-<%--                                        <button type="button" class="btn bg-olive btn-xs">编辑</button>--%>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -298,11 +292,11 @@
                         <div class="form-group form-inline">
                             总共${pageInfo.pages} 页，共${pageInfo.size} 条数据。 每页
                             <select class="form-control" onchange="changePageSize()" id="changePageSize">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
                             </select> 条
                         </div>
                     </div>
@@ -310,18 +304,18 @@
                     <div class="box-tools pull-right">
                         <ul class="pagination">
                             <li>
-                                <a href="${pageContext.request.contextPath}/order/findAll?pageNum=1&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Previous">首页</a>
+                                <a href="${pageContext.request.contextPath}/product/showOrderByProductId?id=${id}&pageNum=1&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Previous">首页</a>
                             </li>
-                            <li><a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">上一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/product/showOrderByProductId?id=${id}&pageNum=${pageInfo.pageNum-1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">上一页</a></li>
                             <c:forEach begin="1" end="${pageInfo.pages}" var="pageNumber">
 
-                            <li><a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">${pageNumber}</a></li>
+                                <li><a href="${pageContext.request.contextPath}/product/showOrderByProductId?id=${id}&pageNum=${pageNumber}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">${pageNumber}</a></li>
 
                             </c:forEach>
 
-                            <li><a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">下一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/product/showOrderByProductId?id=${id}&pageNum=${pageInfo.pageNum+1}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}">下一页</a></li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/order/findAll?pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Next">尾页</a>
+                                <a href="${pageContext.request.contextPath}/product/showOrderByProductId?id=${id}&pageNum=${pageInfo.pages}&pageSize=${pageInfo.pageSize}&keyValue=${keyValue}" aria-label="Next">尾页</a>
                             </li>
                         </ul>
                     </div>
@@ -447,7 +441,8 @@
         var pageSize = $("#changePageSize").val();
 
         //向服务器发送请求，改变每页显示条数
-        location.href = "/order/findAll?pageNum=1&pageSize="
+        location.href = "/product/showOrderByProductId?id=${id}"
+            +"&pageNum=1&pageSize="
             + pageSize;
     }
 
@@ -461,8 +456,9 @@
         if( value == oValue){
             return;
         }
-        location.href = '/order/findAll?pageNum='+1+
-            '&pageSize='+${pageInfo.pageSize}
+        location.href = '/product/showOrderByProductId?id=${id}'
+            +'&pageNum='+1
+            +'&pageSize=${pageInfo.pageSize}'
             +'&keyValue='+value;
     }
 

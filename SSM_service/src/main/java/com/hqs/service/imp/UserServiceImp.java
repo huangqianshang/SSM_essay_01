@@ -83,8 +83,8 @@ public class UserServiceImp implements UserService {
         return userDao.findIdByUsername(receiveName);
     }
 
-    public int findTotalUser() {
-        return userDao.findTotalUser();
+    public int findTotalUser(String keyValue) {
+        return userDao.findTotalUser("%"+keyValue+"%");
     }
 
     public void update(UserInfo user){

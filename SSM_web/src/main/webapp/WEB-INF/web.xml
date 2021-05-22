@@ -58,4 +58,8 @@
         <error-code>403</error-code>
         <location>/WEB-INF/errorPage/403.jsp</location>
     </error-page>
+    <error-page>
+        <error-code>400</error-code>
+        <location>/WEB-INF/errorPage/400.jsp</location>
+    </error-page>
 </web-app>

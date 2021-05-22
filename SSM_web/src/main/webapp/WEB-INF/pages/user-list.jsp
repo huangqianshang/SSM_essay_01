@@ -152,7 +152,11 @@
                             </tr>
                             </thead>
                             <tbody>
-
+                            <c:if test="${0==pageInfo.size}">
+                                <tr>
+                                    <td colspan="7" style="text-align: center;font-weight: bold;font-size: 18px">暂无数据...</td>
+                                </tr>
+                            </c:if>
                             <c:forEach items="${pageInfo.list}" var="user">
                                 <tr>
                                     <td><input name="ids" type="checkbox"></td>
@@ -335,6 +339,8 @@
                 +'&keyValue='+value;
     }
     function del(){
+        var choose = confirm("确定要删除吗？");
+        if(!choose){return;}
         var idList = $("#dataList tr");
         var checkList = document.getElementsByName("ids");
         var ids = "";
@@ -346,9 +352,9 @@
         $.ajax({
             url: "/user/deleteByIds",
             type: "post",
-            data: {ids:ids},
-            success:function(data){
-                if(data > 0){
+            data: {ids: ids},
+            success: function (data) {
+                if (data > 0) {
                     refresh();
                 }
             }
