@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -43,4 +45,11 @@ public class OrderController {
         model.addAttribute ("orders",orders);
         return "order-show";
     }
+
+    @RequestMapping("/setOrderStatus")
+    public void setOrderStatus(HttpServletResponse response, String id, int status) throws IOException{
+        orderService.setOrderStatus (id,status);
+        response.sendRedirect("findAll");
+    }
+
 }

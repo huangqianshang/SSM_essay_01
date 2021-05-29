@@ -36,4 +36,17 @@ public class OrderServiceImp implements OrderService {
     public int findTotalByProductId(String id, String keyValue){
         return orderDao.findTotalByProductId (id,"%"+keyValue+"%");
     }
+
+    public List<Orders> findByRouteId(String id, int pageNum, int pageSize, String keyValue){
+        PageHelper.startPage ( pageNum, pageSize);
+        return orderDao.findByRouteId (id,"%"+keyValue+"%");
+    }
+
+    public int findTotalByRouteId(String id, String keyValue){
+        return orderDao.findTotalByRouteId (id,"%"+keyValue+"%");
+    }
+
+    public void setOrderStatus(String id,int status){
+        orderDao.setOrderStatus(id,status);
+    }
 }

@@ -3,8 +3,8 @@ package com.hqs.domain;
 public class Member {
     private String id;          //无意义、主键uuid
     private String name;        //姓名
-    private String nickname;    //昵称
-    private String phoneNum;    //电话号码
+    private String username;    //昵称
+    private String telephone;    //电话号码
     private String email;       //邮箱
 
     public String getId() {
@@ -23,20 +23,20 @@ public class Member {
         this.name = name;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setUsername(String nickname) {
+        this.username = nickname;
     }
 
-    public String getPhoneNum() {
-        return phoneNum;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+    public void setTelephone(String phoneNum) {
+        this.telephone = phoneNum;
     }
 
     public String getEmail() {
@@ -52,8 +52,8 @@ public class Member {
         return "Member{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", phoneNum='" + phoneNum + '\'' +
+                ", nickname='" + username + '\'' +
+                ", phoneNum='" + telephone + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }

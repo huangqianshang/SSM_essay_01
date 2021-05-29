@@ -106,45 +106,38 @@
                 <div class="panel-heading">订单信息</div>
                 <div class="row data-type">
 
+                    <div class="col-md-2 title">产品名称</div>
+                    <div class="col-md-4 data">
+                        <input type="text" name="rname" readonly class="form-control" placeholder="产品名称" value="${orders.product.rname}">
+<%--                        <input type="text" name="rid" hidden class="form-control" value="${id}">--%>
+                    </div>
                     <div class="col-md-2 title">订单编号</div>
                     <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="订单编号"
-                               value="${orders.orderNum }" readonly="readonly">
+                        <input type="text"  readonly class="form-control"  value="${orders.orderNum}">
+                        <%--                        <input type="text" name="rid" hidden class="form-control" value="${id}">--%>
                     </div>
-
-                    <div class="col-md-2 title">下单时间</div>
-                    <div class="col-md-4 data">
-                        <div class="input-group date">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                            <input type="text" class="form-control pull-right"
-                                   id="datepicker-a3" readonly="readonly"
-                                   value="${orders.getFormatOrderTime()}">
-                        </div>
-                    </div>
-                    <div class="col-md-2 title">路线名称</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="路线名称"
-                               value="${orders.product.productName }" readonly="readonly">
-                    </div>
-
-                    <div class="col-md-2 title">出发城市</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="出发城市"
-                               value="${orders.product.cityName }" readonly="readonly">
-                    </div>
-
                     <div class="col-md-2 title">出发时间</div>
                     <div class="col-md-4 data">
                         <div class="input-group date">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right"
-                                   id="datepicker-a6" value="${orders.product.getFormatDepartureTime()}"
-                                   readonly="readonly">
+                            <input type="text" name="rdate" readonly class="form-control pull-right" id="dateTimePicker" value="${orders.product.rdate}">
                         </div>
+                    </div>
+                    <div class="col-md-2 title">下单时间</div>
+                    <div class="col-md-4 data">
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" name="rdate" readonly class="form-control pull-right"  value="${orders.getFormatOrderTime()}">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 title">商品价格</div>
+                    <div class="col-md-4 data">
+                        <input type="text" name="price" readonly class="form-control" placeholder="商品价格" value="${orders.product.price}">
                     </div>
                     <div class="col-md-2 title">出游人数</div>
                     <div class="col-md-4 data">
@@ -152,9 +145,13 @@
                                value="${orders.peopleCount}" readonly="readonly">
                     </div>
 
+                    <div class="col-md-2 title rowHeight2x">产品描述</div>
+                    <div class="col-md-10 data rowHeight2x">
+                        <textarea class="form-control" name="routeIntroduce" rows="3" placeholder="请输入..." readonly>${orders.product.routeIntroduce}</textarea>
+                    </div>
                     <div class="col-md-2 title rowHeight2x">其他信息</div>
                     <div class="col-md-10 data rowHeight2x">
-						<textarea class="form-control" rows="3" placeholder="其他信息">
+						<textarea class="form-control" rows="3" placeholder="其他信息" readonly>
                             ${orders.orderDesc }
                         </textarea>
                     </div>
@@ -207,13 +204,13 @@
                 <div class="row data-type">
 
                     <div class="col-md-2 title">会员</div>
-                    <div class="col-md-4 data text">${orders.member.nickname }</div>
+                    <div class="col-md-4 data text">${orders.member.username }</div>
 
                     <div class="col-md-2 title">联系人</div>
                     <div class="col-md-4 data text">${orders.member.name}</div>
 
                     <div class="col-md-2 title">手机号</div>
-                    <div class="col-md-4 data text">${orders.member.phoneNum}</div>
+                    <div class="col-md-4 data text">${orders.member.telephone}</div>
 
                     <div class="col-md-2 title">邮箱</div>
                     <div class="col-md-4 data text">${orders.member.email}</div>
@@ -229,7 +226,7 @@
                         <div class="col-md-4 data text">在线支付-${orders.getStringPayType()}</div>
 
                         <div class="col-md-2 title">金额</div>
-                        <div class="col-md-4 data text">￥${orders.product.productPrice}</div>
+                        <div class="col-md-4 data text">￥${orders.product.price}</div>
 
                     </div>
                 </div>

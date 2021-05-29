@@ -214,7 +214,7 @@
 <%--                                    <button type="button" class="btn btn-default" title="屏蔽">--%>
 <%--                                        <i class="fa fa-ban"></i> 屏蔽--%>
 <%--                                    </button>--%>
-                                    <button type="button" class="btn btn-default" title="刷新">
+                                    <button type="button" class="btn btn-default" title="刷新" onclick="refresh()">
                                         <i class="fa fa-refresh"></i> 刷新
                                     </button>
                                 </div>
@@ -223,7 +223,7 @@
                         <div class="box-tools pull-right">
                             <div class="has-feedback">
                                 <input type="text" class="form-control input-sm"
-                                       placeholder="搜索" onblur="search()" onclick="search()" id="keyValue" value="${keyValue}"> <span
+                                       placeholder="输入订单编号" onblur="search()" onclick="search()" id="keyValue" value="${keyValue}"> <span
                                     class="glyphicon glyphicon-search form-control-feedback"></span>
                             </div>
                         </div>
@@ -237,7 +237,7 @@
                                 <th class="" style="padding-right: 0px;"><input
                                         id="selall" type="checkbox" class="icheckbox_square-blue">
                                 </th>
-                                <th class="sorting_asc">ID</th>
+<%--                                <th class="sorting_asc">ID</th>--%>
                                 <th class="sorting_desc">订单编号</th>
                                 <th class="sorting_asc sorting_asc_disabled">产品名称</th>
                                 <th class="sorting_desc sorting_desc_disabled">金额</th>
@@ -257,14 +257,15 @@
 
                                 <tr>
                                     <td><input name="ids" type="checkbox"></td>
-                                    <td>${orders.id }</td>
+<%--                                    <td>${orders.id }</td>--%>
                                     <td>${orders.orderNum }</td>
-                                    <td>${orders.product.productName }</td>
-                                    <td>${orders.product.productPrice }</td>
+                                    <td>${orders.product.rname }</td>
+                                    <td>${orders.product.price }</td>
                                     <td>${orders.getFormatOrderTime() }</td>
                                     <td class="text-center">${orders.getStringOrderStatus() }</td>
                                     <td class="text-center">
-<%--                                        <button type="button" class="btn bg-olive btn-xs">订单</button>--%>
+                                        <button type="button" class="btn bg-olive btn-xs" onclick="setOrderStatus(2,'${orders.id}')">退回</button>
+                                        <button type="button" class="btn bg-olive btn-xs" onclick="setOrderStatus(3,'${orders.id}')">通过</button>
                                         <button type="button" class="btn bg-olive btn-xs" onclick="location.href='/order/showMoreById?id=${orders.id}'">详情</button>
 <%--                                        <button type="button" class="btn bg-olive btn-xs">编辑</button>--%>
                                     </td>
@@ -449,6 +450,10 @@
         //向服务器发送请求，改变每页显示条数
         location.href = "/order/findAll?pageNum=1&pageSize="
             + pageSize;
+    }
+
+    function setOrderStatus(num,id){
+        location.href="/order/setOrderStatus?status="+num+"&id="+id;
     }
 
     $(function () {

@@ -7,13 +7,13 @@ import java.util.List;
 
 public class Orders {
     private String id;          //无意义，uuid
-    private String orderNum;    //订单编号
+    private int orderNum;    //订单编号
     private Date orderTime;     //下单时间
     private int peopleCount;    //出行人数
-    private Product product;    //产品信息
+    private Route product;    //产品信息
     private List < Traveller > travellers;    //出行人信息
     private Member member;      //用户信息
-    private int orderStatus;    //订单状态(0 未支付 1 已支付)
+    private int orderStatus;    //订单状态(0 申请退款中 1 已支付 2 被退回 3已退款)
     private Integer payType;    //支付方式(0 支付宝 1 微信 2其它)
     private String orderDesc;   //订单描述
 
@@ -25,11 +25,11 @@ public class Orders {
         this.id = id;
     }
 
-    public String getOrderNum() {
+    public int getOrderNum() {
         return orderNum;
     }
 
-    public void setOrderNum(String orderNum) {
+    public void setOrderNum(int orderNum) {
         this.orderNum = orderNum;
     }
 
@@ -53,11 +53,11 @@ public class Orders {
         this.peopleCount = peopleCount;
     }
 
-    public Product getProduct() {
+    public Route getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(Route product) {
         this.product = product;
     }
 
@@ -83,10 +83,18 @@ public class Orders {
 
     public String getStringOrderStatus() {
         //订单状态(0 未支付 1 已支付)
-        if (orderStatus == 1){
-            return "已支付";
+        switch( orderStatus ){
+            case 0:
+                return "申请退款中";
+            case 1:
+                return "已支付";
+            case 2:
+                return "被退回";
+            case 3:
+                return "已退款";
+            default:
+                return "未知";
         }
-        return "未支付";
     }
 
     public void setOrderStatus(int orderStatus) {

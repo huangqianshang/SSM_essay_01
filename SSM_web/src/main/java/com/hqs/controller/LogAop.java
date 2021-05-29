@@ -50,7 +50,7 @@ public class LogAop {
         //获取url
         String requestURI = request.getRequestURI();
         String url = requestURI.split("\\?")[0];
-        if(!url.contains("/sysLog") && !url.contains("/email") && !url.contains("/find") && !url.contains("/show")  ){
+        if(!url.contains("/sysLog") && !url.contains("/email") && !url.contains("/find") && !url.contains("/show") && !url.contains("/link")  ){
             SysLog sysLog = new SysLog();
             sysLog.setId(GetUUID.get());
             sysLog.setVisitTime(date);

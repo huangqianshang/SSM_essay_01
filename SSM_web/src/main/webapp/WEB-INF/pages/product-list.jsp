@@ -197,17 +197,28 @@
                         <!--数据列表-->
                         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
                             <thead>
+<%--                            <tr>--%>
+<%--                                <th class="" style="padding-right:0px;">--%>
+<%--                                    <input id="selall" type="checkbox" class="icheckbox_square-blue">--%>
+<%--                                </th>--%>
+<%--                                <th class="sorting_asc">ID</th>--%>
+<%--                                <th class="sorting_desc">商品编号</th>--%>
+<%--                                <th class="sorting_asc sorting_asc_disabled">产品名称</th>--%>
+<%--                                <th class="sorting_desc sorting_desc_disabled">出发城市</th>--%>
+<%--                                <th class="sorting">出发时间</th>--%>
+<%--                                <th class="text-center sorting">产品价格</th>--%>
+<%--                                <th class="text-center sorting">产品描述</th>--%>
+<%--                                <th class="text-center sorting">状态</th>--%>
+<%--                                <th class="text-center">操作</th>--%>
+<%--                            </tr>--%>
                             <tr>
                                 <th class="" style="padding-right:0px;">
                                     <input id="selall" type="checkbox" class="icheckbox_square-blue">
                                 </th>
                                 <th class="sorting_asc">ID</th>
-                                <th class="sorting_desc">商品编号</th>
                                 <th class="sorting_asc sorting_asc_disabled">产品名称</th>
-                                <th class="sorting_desc sorting_desc_disabled">出发城市</th>
-                                <th class="sorting">出发时间</th>
+                                <th class="sorting_asc sorting_asc_disabled">产品描述</th>
                                 <th class="text-center sorting">产品价格</th>
-                                <th class="text-center sorting">产品描述</th>
                                 <th class="text-center sorting">状态</th>
                                 <th class="text-center">操作</th>
                             </tr>
@@ -219,19 +230,31 @@
                                 </tr>
                             </c:if>
                             <c:forEach items="${pageInfo.list}" var="product">
+<%--                                <tr>--%>
+<%--                                    <td><input name="ids" type="checkbox"></td>--%>
+<%--                                    <td>${product.id}</td>--%>
+<%--                                    <td>${product.productNum}</td>--%>
+<%--                                    <td>${product.productName}</td>--%>
+<%--                                    <td>${product.cityName}</td>--%>
+<%--                                    <td>${product.getFormatDepartureTime()}</td>--%>
+<%--                                    <td>${product.productPrice}</td>--%>
+<%--                                    <td>${product.productDesc}</td>--%>
+<%--                                    <td>${product.getShowProductStatus()}</td>--%>
+<%--                                    <td class="text-center">--%>
+<%--                                        <a class="btn bg-olive btn-xs" href="${pageContext.request.contextPath}/product/showOrderByProductId?id=${product.id}">订单</a>--%>
+<%--                                        <a class="btn bg-olive btn-xs" href="${pageContext.request.contextPath}/product/show?id=${product.id}" >编辑</a>--%>
+<%--                                    </td>--%>
+<%--                                </tr>--%>
                                 <tr>
                                     <td><input name="ids" type="checkbox"></td>
-                                    <td>${product.id}</td>
-                                    <td>${product.productNum}</td>
-                                    <td>${product.productName}</td>
-                                    <td>${product.cityName}</td>
-                                    <td>${product.getFormatDepartureTime()}</td>
-                                    <td>${product.productPrice}</td>
-                                    <td>${product.productDesc}</td>
-                                    <td>${product.getShowProductStatus()}</td>
+                                    <td>${product.rid}</td>
+                                    <td>${product.rname}</td>
+                                    <td>${product.routeIntroduce}</td>
+                                    <td>${product.price}</td>
+                                    <td>${product.getStringRflag()}</td>
                                     <td class="text-center">
-                                        <a class="btn bg-olive btn-xs" href="${pageContext.request.contextPath}/product/showOrderByProductId?id=${product.id}">订单</a>
-                                        <a class="btn bg-olive btn-xs" href="${pageContext.request.contextPath}/product/show?id=${product.id}" >编辑</a>
+                                        <a class="btn bg-olive btn-xs" href="${pageContext.request.contextPath}/product/showOrderByProductId?id=${product.rid}">订单</a>
+                                        <a class="btn bg-olive btn-xs" href="${pageContext.request.contextPath}/product/show?id=${product.rid}" >编辑</a>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -386,7 +409,7 @@
         var pageSize = $("#changePageSize").val();
 
         //向服务器发送请求，改变每页显示条数
-        location.href = "/role/findAll?pageNum=1&pageSize="
+        location.href = "/product/findAll?pageNum=1&pageSize="
             + pageSize;
     }
     $(function(){

@@ -19,4 +19,10 @@ public interface OrderService {
 
     //查询对应产品号的订单总数
     int findTotalByProductId(String id, String keyValue);
+
+    List<Orders> findByRouteId(String id, int pageNum, int pageSize, String keyValue);
+
+    int findTotalByRouteId(String id, String keyValue);
+
+    void setOrderStatus(String id, int status);
 }

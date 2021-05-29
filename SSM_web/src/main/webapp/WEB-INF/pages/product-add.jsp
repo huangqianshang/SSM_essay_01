@@ -142,54 +142,93 @@
                 <li class="active">产品表单</li>
             </ol>
         </section>
+<%--        <div class="row data-type">--%>
+<%--            <form action="/product/add" method="post">--%>
+<%--            <div class="col-md-2 title">商品编号</div>--%>
+<%--            <div class="col-md-4 data">--%>
+<%--                <input type="text" name="productNum" class="form-control" placeholder="商品编号" value="">--%>
+<%--            </div>--%>
+
+<%--            <div class="col-md-2 title">产品名称</div>--%>
+<%--            <div class="col-md-4 data">--%>
+<%--                <input type="text" name="productName" class="form-control" placeholder="产品名称" value="">--%>
+<%--            </div>--%>
+
+<%--            <div class="col-md-2 title">出发城市</div>--%>
+<%--            <div class="col-md-4 data">--%>
+<%--                <input type="text" name="cityName" class="form-control" placeholder="出发城市" value="">--%>
+<%--            </div>--%>
+
+<%--            <div class="col-md-2 title">出发时间</div>--%>
+<%--            <div class="col-md-4 data">--%>
+<%--                <div class="input-group date">--%>
+<%--                    <div class="input-group-addon">--%>
+<%--                        <i class="fa fa-calendar"></i>--%>
+<%--                    </div>--%>
+<%--                    <input type="text" name="String_DepartureTime" class="form-control pull-right" id="dateTimePicker">--%>
+<%--                </div>--%>
+<%--            </div>--%>
+
+<%--            <div class="col-md-2 title">商品价格</div>--%>
+<%--            <div class="col-md-4 data">--%>
+<%--                <input type="text" name="productPrice" class="form-control" placeholder="商品价格" value="">--%>
+<%--            </div>--%>
+
+<%--            <div class="col-md-2 title">状态</div>--%>
+<%--            <div class="col-md-4 data">--%>
+<%--                <select class="form-control" name="String_productStatus">--%>
+<%--                    <option selected="selected">开启</option>--%>
+<%--                    <option>关闭</option>--%>
+<%--                </select>--%>
+<%--            </div>--%>
+
+<%--            <div class="col-md-2 title rowHeight2x">其他信息</div>--%>
+<%--            <div class="col-md-10 data rowHeight2x">--%>
+<%--                <textarea class="form-control" name="productDesc" rows="3" placeholder="请输入..."></textarea>--%>
+<%--            </div>--%>
+<%--            <div class="col-md-10 data text-center">--%>
+<%--                <button type="submit" class="btn bg-maroon">保存</button>--%>
+<%--                <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>--%>
+<%--            </div>--%>
+<%--            </form>--%>
+<%--        </div>--%>
         <div class="row data-type">
             <form action="/product/add" method="post">
-            <div class="col-md-2 title">商品编号</div>
-            <div class="col-md-4 data">
-                <input type="text" name="productNum" class="form-control" placeholder="商品编号" value="">
-            </div>
-
-            <div class="col-md-2 title">产品名称</div>
-            <div class="col-md-4 data">
-                <input type="text" name="productName" class="form-control" placeholder="产品名称" value="">
-            </div>
-
-            <div class="col-md-2 title">出发城市</div>
-            <div class="col-md-4 data">
-                <input type="text" name="cityName" class="form-control" placeholder="出发城市" value="">
-            </div>
-
-            <div class="col-md-2 title">出发时间</div>
-            <div class="col-md-4 data">
-                <div class="input-group date">
-                    <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                    </div>
-                    <input type="text" name="String_DepartureTime" class="form-control pull-right" id="dateTimePicker">
+                <div class="col-md-2 title">产品名称</div>
+                <div class="col-md-4 data">
+                    <input type="text" name="rname" class="form-control" placeholder="产品名称" value="">
                 </div>
-            </div>
+                <div class="col-md-2 title">出发时间</div>
+                <div class="col-md-4 data">
+                    <div class="input-group date">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="text" name="rdate" class="form-control pull-right" id="dateTimePicker">
+                    </div>
+                </div>
 
-            <div class="col-md-2 title">商品价格</div>
-            <div class="col-md-4 data">
-                <input type="text" name="productPrice" class="form-control" placeholder="商品价格" value="">
-            </div>
+                <div class="col-md-2 title">商品价格</div>
+                <div class="col-md-4 data">
+                    <input type="text" name="price" class="form-control" placeholder="商品价格" value="">
+                </div>
 
-            <div class="col-md-2 title">状态</div>
-            <div class="col-md-4 data">
-                <select class="form-control" name="String_productStatus">
-                    <option selected="selected">开启</option>
-                    <option>关闭</option>
-                </select>
-            </div>
+                <div class="col-md-2 title">状态</div>
+                <div class="col-md-4 data">
+                    <select class="form-control" name="rflag">
+                        <option selected="selected">开启</option>
+                        <option>关闭</option>
+                    </select>
+                </div>
 
-            <div class="col-md-2 title rowHeight2x">其他信息</div>
-            <div class="col-md-10 data rowHeight2x">
-                <textarea class="form-control" name="productDesc" rows="3" placeholder="请输入..."></textarea>
-            </div>
-            <div class="col-md-10 data text-center">
-                <button type="submit" class="btn bg-maroon">保存</button>
-                <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
-            </div>
+                <div class="col-md-2 title rowHeight2x">产品描述</div>
+                <div class="col-md-10 data rowHeight2x">
+                    <textarea class="form-control" name="routeIntroduce" rows="3" placeholder="请输入..."></textarea>
+                </div>
+                <div class="col-md-10 data text-center">
+                    <button type="submit" class="btn bg-maroon">保存</button>
+                    <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
+                </div>
             </form>
         </div>
 

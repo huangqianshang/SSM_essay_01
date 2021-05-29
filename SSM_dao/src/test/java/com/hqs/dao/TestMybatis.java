@@ -29,18 +29,18 @@ public class TestMybatis {
 //            System.out.println (product );
 //        }
 //    }
-    @Test
-    public void insert(){
-        Product product = new Product ();
-        product.setId ("1");
-        product.setDepartureTime (new Date ());
-        product.setProductStatus (0);
-        product.setCityName ("cs");
-        product.setProductDesc ("ASdsa");
-        product.setProductName ("Asdsa");
-        product.setProductNum ("istes");
-        product.setProductPrice (1000);
-        dao.add (product);
-    }
+//    @Test
+//    public void insert(){
+//        Product product = new Product ();
+//        product.setId ("1");
+//        product.setDepartureTime (new Date ());
+//        product.setProductStatus (0);
+//        product.setCityName ("cs");
+//        product.setProductDesc ("ASdsa");
+//        product.setProductName ("Asdsa");
+//        product.setProductNum ("istes");
+//        product.setProductPrice (1000);
+//        dao.add (product);
+//    }
 
 }
